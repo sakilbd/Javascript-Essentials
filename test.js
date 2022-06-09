@@ -1,28 +1,23 @@
-function gradingStudents(grades) {
-    // Write your code here
-    // return grades;
-    if (grades < 38) {
-        return grades;
-    } else if (grades >= 38) {
-        let i = grades.toString()[0];
+function quantities(items) {
+    let sauceValue = 0;
+    let noodlesValue = 0
+    const p = items.map((q) => {
+        switch (q) {
+            case 'sauce':
+                sauceValue = sauceValue + .2;
+                console.log(sauceValue);
+                break;
+            case 'noodles':
+                noodlesValue = noodlesValue + 50;
+                console.log(noodlesValue);
+                break;
+        }
 
-        let multiplier = parseInt(i) * 10;
-
-        multiplier - grades < 0 & multiplier - grades > -5 ? multiplier = multiplier + 5 : multiplier;
-        let grace = multiplier - grades;
-        // console.log(grace);
-
-        grace < -5 ? multiplier = multiplier + 10 : grace;
-        // console.log(multiplier);
-        let finalGrace = multiplier - grades;
-        // console.log(finalGrace);
-        return finalGrace < 3 ? multiplier : grades;
-
-
-    }
-
+    });
+    return {
+        noodles: noodlesValue,
+        sauce: sauceValue
+    };
 }
 
-
-
-console.log(gradingStudents(4));
+console.log(quantities(['sauce', 'noodles', 'sauce', 'meat', 'mozzarella', 'noodles']));
