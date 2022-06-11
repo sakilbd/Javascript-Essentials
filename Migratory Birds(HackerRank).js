@@ -8,7 +8,7 @@ Example
 arr=[1,1,2,2,3]
 There are two each of types 1 and 2, and one sighting of type 3.Pick the lower of the two types seen twice: type 1.*/
 
-
+//self try but not completed
 const c = console.log.bind(console);
 
 function migratoryBirds(arr) {
