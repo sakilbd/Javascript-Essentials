@@ -13,18 +13,22 @@ function scaleRecipe(recipe, number) {
     const recipe1 = {
 
     }
+
+    // const recipe2 = {...recipe }; //Object can be copied like this no need to Object.key
+
+
     Object.keys(recipe).forEach(key => {
         recipe1[key] = recipe[key] / 2;
     });
 
-    return recipe1;
+    // return recipe1;
     Object.keys(recipe1).forEach((key) => {
-        recipe1[key] = recipe1[key] * number < 1 ? (recipe1[key] * number).toFixed(2) : Math.ceil(recipe1[key] * number);
+        recipe1[key] = (recipe1[key] * number) % 1 != 0 ? parseFloat(recipe1[key] * number) : Math.ceil(recipe1[key] * number);
     })
 
-    return recipe;
+    return recipe1;
 
 
 }
 
-c(scaleRecipe(recipe, 3))
+c(scaleRecipe(recipe, 6))
