@@ -42,6 +42,32 @@ var maximumUniqueSubarray = function(arr) {
     return addArr[addArr.length - 1];
 };
 
+
+//optimal solution 
+var maximumUniqueSubarray = function(nums) {
+    let seen = [],
+        tempSum = 0,
+        maxSum = 0;
+    for (let i = 0; i < nums.length; i++) {
+        if (!seen.includes(nums[i])) {
+            seen.push(nums[i]);
+            tempSum += nums[i];
+            if (tempSum > maxSum) maxSum = tempSum;
+        } else {
+            let idx = seen.indexOf(nums[i]);
+            seen.splice(0, idx + 1);
+            if (seen.length == 0) {
+                tempSum = 0;
+            } else {
+                tempSum = seen.reduce((acc, num) => acc + num);
+            }
+            seen.push(nums[i]);
+            tempSum += nums[i];
+        }
+    }
+    return maxSum;
+}
+
 c(
     maximumUniqueSubarray([
         28, 7320, 3661, 3458, 8708, 7632, 7434, 4643, 2694, 2619, 4665, 896, 2550,
