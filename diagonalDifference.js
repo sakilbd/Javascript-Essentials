@@ -2,6 +2,13 @@ const c = console.log.bind(console);
 
 const x = Number.MAX_SAFE_INTEGER;
 
+// concept 
+/* 
+const firstDiagonal = arr[0][0] + arr[1][1] + arr[2][2];
+const secondDiagonal = arr[0][2] + arr[1][1] + arr[2][0];
+return Math.abs(firstDiagonal - secondDiagonal);
+
+*/
 function diagonalDifference(arr) {
     let leftAdd = 0;
     let rightAdd = 0;
