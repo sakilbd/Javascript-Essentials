@@ -1,6 +1,8 @@
 // https://www.hackerrank.com/challenges/picking-numbers/problem?isFullScreen=true
 const c = console.log.bind(console);
 
+
+//not solved
 function pickingNumbers(a) {
     var arr = [...a];
     const count = {};
@@ -40,5 +42,17 @@ function pickingNumbers(a) {
     }
     return finalArray;
 }
+
+
+//optimal solution 
+// function pickingNumbers(a) {
+//     let maxcount = 0;
+
+//     [...new Set(a)].forEach(x => {
+//         maxcount = Math.max(maxcount,
+//             a.reduce((c, v) => c += (v === x || v === x + 1), 0));
+//     })
+//     return maxcount;
+// }
 
 c(pickingNumbers([4, 6, 5, 3, 3, 1]));
