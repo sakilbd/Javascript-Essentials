@@ -30,7 +30,7 @@ var countSmaller = function(nums) {
     counts = new Array(nums.length).fill(0);
 
     mergeSort(tuples);
-    // return counts;
+    return counts;
 };
 
 function mergeSort(arr) {
