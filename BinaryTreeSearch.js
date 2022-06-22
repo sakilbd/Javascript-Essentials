@@ -40,6 +40,24 @@ class BinaryTree {
             }
         }
     }
+    find(value) {
+        if (this.root == null) return false;
+        var current = this.root,
+            found = false;
+        while (!current && !found) {
+            if (value < current.value) {
+                current = current.left
+            } else if (value > current.value) {
+                current = current.right
+
+            } else {
+                return true
+            }
+        }
+
+        return false;
+
+    }
 }
 
 //     10
@@ -60,10 +78,13 @@ var tree = new BinaryTree();
 // c(tree.insert(19));
 
 tree.insert(10);
-tree.insert(10);
+
 tree.insert(15);
+tree.insert(14);
 tree.insert(17);
 tree.insert(19);
 tree.insert(16);
 
-c(JSON.stringify(tree));
+c(tree.find(10));
+
+// c((JSON.stringify(tree)));
