@@ -1,4 +1,8 @@
-const c = console.log.bind(console);
+https: //leetcode.com/problems/3sum/submissions/
+
+
+
+    const c = console.log.bind(console);
 
 var threeSum = function(nums) {
     var arr = [...nums];
@@ -25,109 +29,94 @@ var threeSum = function(nums) {
     arrayWithZero.forEach((item) => {
         final.push(item.sort());
     });
-    // return final;
-    // return final[0] == final[1];
 
-    // return final;
     var j = 0;
-    // const array = [1, 2, 3, 4];
 
-    // // return (array.shift());
     var result = [];
-    // var newArr = [...final];
-    // final.forEach((item, i) => {
 
-    //     j = i + 1;
-    //     c('J' + j);
-    //     c(final.length);
-    //     // while (newArr.length != 0) {
-    //     // c(newArr.length);
-    //     while (j < final.length) {
-    //         if (checkEquals(final[i], final[j]) == true) {
-    //             result.push(item);
-    //             final.splice(final.indexOf(final[j]), 1)
-    //                 // final.splice(final.indexOf(item), 1)
-
-    //         } else {
-
-    //         }
-    //         // final.splice(final.indexOf(final[j]), 1) :
-    //         // "";
-    //         j++;
-    //         break;
-    //         // c(final.length);
-    //         // break;
-
-    //     }
-
-    //     // result.push(newArr.shift());
-    //     // break;
-    //     // }
-
-    //     // c(final);
-    // });
-
-    // c(final);
-    // let newArray = [...final];
-    // for (let k = 0; k < final.length; k++) {
-    //     for (let l = k + 1; k < final.length - 1; k++) {
-    //         c(k + " " + l + (checkEquals(final[k], final[l]) == true));
-    //         if (checkEquals(final[k], final[l]) == true) {
-    //             newArray.splice(newArray.indexOf(final[l]), 1);
-    //             // final.splice(newArray.indexOf(final[l]), 1)
-    //             c(newArray);
-    //         }
-    //     }
-    //     // final.splice(newArray.indexOf(final[i]), 1)
-    //     // result.push(final[i]);
-    // }
-    // return [1, 2, 3].splice(1, 1);
     var newArray = [...final];
+    var temp = [0, 0, 0]
 
+
+    let k = 0;
+    let l = 0;
+    // return final;
+    // c([...final]);
     final.forEach(() => {
         newArray.forEach((item, i) => {
-            for (let k = 0; k < newArray.length; k++) {
-                for (let l = k + 1; k < newArray.length - 1; k++) {
+            // if (newArray.length == 1) {
+            //     return result;
+            // }
+
+            for (k = 0; k < newArray.length; k++) {
+                for (l = k + 1; l < newArray.length; l++) {
                     // c(k + " " + l + (checkEquals(newArray[k], newArray[l]) == true));
-                    if (checkEquals(newArray[k], newArray[l]) == true) {
+                    //  
+                    if ((checkEquals(newArray[k], newArray[l])) == true) {
                         newArray.splice(newArray.indexOf(final[l]), 1);
                         // newArray.splice(newArray.indexOf(final[k]), 1)
+                        // c(newArray)
+                    } else {
                         // c(newArray);
                     }
-
+                    // break;
                 }
-                if (newArray[k] === undefined) {} else { result.push(newArray[k]); }
-                if (newArray.length >= 1) {
-                    newArray.splice(newArray.indexOf(final[k]), 1)
+                // break;
+                // return "fuckshit";
+
+
+                // c([...temp])
+
+                if (newArray[k] === undefined) {} else if (newArray.length == 1) {
+                    result.push(newArray[k]);
+                    break;
                 } else {
-
+                    checkEquals([...temp], newArray[k]) == false ?
+                        result.push(newArray[k]) : '';
+                    temp = [];
+                    temp = newArray[k];
+                    // c(temp)
+                    // c(newArray);
                 }
+                // if (newArray.length == 1) {
+                //     // break;
+                // } else {
+                c(newArray);
+                newArray.splice(newArray.indexOf(final[k]), 1);
+                // c(newArray)
+                // break;
+
+                // }
+                // break;
 
 
-
-                // final.splice(newArray.indexOf(final[i]), 1)
-                // result.push(final[i]);
             }
         });
     });
+    // return checkEquals([-1, -2, 3], [-1, 0, 1]);
 
     function checkEquals(a, b) {
+
         const length = a.length;
         let check = false;
         let i = 0;
+        // if (!a && !b) {
         while (i < a.length) {
             if (a[i] == b[i]) {
                 i++;
                 check = true;
             } else {
                 check = false;
-                break;
+                return false;
             }
 
             // return check;
         }
 
+        // }
         return check;
+
+
     }
 
     // final.forEach((item, i) => {
@@ -142,4 +131,6 @@ var threeSum = function(nums) {
     return result;
 };
 
-c(threeSum([-1, 0, 1, 2, -1, -4]));
+// c(threeSum([-1, 0, 1, 0]));
+// c(threeSum([-1, 0, 1, 2, -1, -4]));
+c(threeSum([3, 0, -2, -1, 1, 2]));
