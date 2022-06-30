@@ -36,7 +36,7 @@ function findString(string, subString, wordLength) {
     let splitedString = string.split("");
     // c(splitedString);
     let concatSubString = "";
-    for (let i = 0; i < splitedString.length; i++) {
+    for (let i = 0; i < splitedString.length; i++) { //i= i +wordLength used insted of i++ and also passed some test cases 
         for (let j = i; j < subString.length + i; j++) {
             concatSubString = concatSubString + string[j];
         }
