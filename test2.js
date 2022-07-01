@@ -1,24 +1,21 @@
 const c = console.log.bind(console);
 
-var moveZeroes = function(nums) {
+const closure = (item) => {
+    c(item);
 
-
-
-    var newArr = [...nums];
-
-    let x = 0;
-    var zeros = [];
-    while (x < newArr.length) {
-        newArr.forEach((item) => {
-            if (nums[x] == 0) {
-                const p = nums.indexOf(nums[x]);
-                nums.splice(p, 1);
-                zeros.push(0);
-            }
-        });
-
-        x++;
+    return function q(item2) {
+        c(`return function with item : ${item}+item 2 which is ${item2}`);
     }
-    return [...nums, ...zeros];
-};
-c(moveZeroes([0, 1, 0, 3, 12]));
+    return "shit";
+}
+
+const clo = closure("fuckyeah");
+
+c(clo());
+c(clo());
+c(clo());
+c(clo());
+c(clo());
+c(clo());
+c(clo());
+c(clo());
