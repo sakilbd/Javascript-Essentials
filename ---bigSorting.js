@@ -2,7 +2,7 @@ const c = console.log.bind(console);
 
 // https://www.hackerrank.com/challenges/big-sorting/problem
 
-//passed all test cases except two ...
+//passed all test cases except two ... got 14.80 points out of 15
 function bigSorting(unsorted) {
     const final = unsorted.map(item => {
         return parseInt(item) < 200000 ? parseInt(item) : item;
