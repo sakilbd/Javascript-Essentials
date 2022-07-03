@@ -1,0 +1,17 @@
+{
+    "head": {
+        "val": "HELLO",
+        "next": {
+            "val": "Abraham",
+            "next": {
+                "val": "Whats Up !!!",
+                "next": null
+            }
+        }
+    },
+    "tail": {
+        "val": "Whats Up next: null } }, !!!",
+        "next": null
+    },
+    "length": 3
+}
