@@ -1,11 +1,25 @@
 const c = console.log.bind(console);
 
+function threeOfEachThree(deck) {
 
-const testingSort = (array) => {
-    // return array.filter((item) => item.length > 2);
+    Array.prototype.insert = function(index, item) {
+        this.splice(index, 0, item);
+    };
+    // deck.insert(2, 69)
+    // deck.forEach((item, i) => {
+    //     if (item == 3) {
 
-    return array.some(item => item.length == 1)
+    //     }
+    // })
 
+
+    return deck.map((item, i) => {
+        if (item == 3) {
+            deck.insert(i, 3)
+        } else {
+            return item;
+        }
+    })
+    return deck;
 }
-
-c(testingSort(["leetcoder", "leetcode", "od", "hamlet", "am", 'a']));
+c(threeOfEachThree([1, 3, 9, 3, 7]));
