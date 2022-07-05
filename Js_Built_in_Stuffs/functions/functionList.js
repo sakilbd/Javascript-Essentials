@@ -1,0 +1,5 @@
+1. bigString.includes(smallString) //returns treu/false if matches substring
+2. Array.sort((a, b) => a - b)
+3. ArrayOfString.sort((a, b) => a.length - b.length) //sorts string accorting to string length
+4. Array.filter(item => item > 0) // returns the filtered array wow!!!!!
+5. Array.some(item => item > 12) // returns true/false if condition matches for one or mulitple elements

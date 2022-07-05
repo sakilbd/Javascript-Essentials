@@ -70,19 +70,19 @@ const c = console.log.bind(console);
 
 //solution by me 
 // optimal Solution 
-var stringMatching = function(words, ans = new Set()) {
-    words.sort((a, b) => a.length - b.length);
-    for (let x = 0; x < words.length - 1; x++) {
-        for (let y = x + 1; y < words.length; y++) {
-            if (words[y].indexOf(words[x]) > -1) ans.add(words[x]);
-        }
-    }
-    return [...ans];
-};
+// var stringMatching = function(words, ans = new Set()) {
+//     words.sort((a, b) => a.length - b.length);
+//     for (let x = 0; x < words.length - 1; x++) {
+//         for (let y = x + 1; y < words.length; y++) {
+//             if (words[y].indexOf(words[x]) > -1) ans.add(words[x]);
+//         }
+//     }
+//     return [...ans];
+// };
 
 // super concise code DAMN!!!!!!!!!!!
-// const stringMatching = words =>
-//     words.filter(n => words.some(h => h !== n && h.includes(n)));
+const stringMatching = words =>
+    words.filter(n => words.some(h => h !== n && h.includes(n)));
 
 //super concise code DAMN!!!!!!
 
