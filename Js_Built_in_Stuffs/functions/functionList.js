@@ -19,3 +19,7 @@ arr.insert(0, 69) //returns [69,1,2,3,4]
         console.log(`shit ${parm}`); //logs shit parameterOne
     })("parameterOne")
     /*IIFT :Immediately Invoked Function Expression (Executes Imediately)*/
+10. someDigit.toString(2) //boom converts to binary
+11. someString.charCodeAt(indexNumber) // returns specific indexed value of that character
+
+12. String.fromCharCode(code) ///converts charcode to character ....
