@@ -12,4 +12,10 @@
 };
 const arr = [1, 2, 3, 4];
 arr.insert(0, 69) //returns [69,1,2,3,4]
-9
+
+/*IIFT :Immediately Invoked Function Expression (Executes Imediately)*/
+
+9.((parm) => {
+        console.log(`shit ${parm}`); //logs shit parameterOne
+    })("parameterOne")
+    /*IIFT :Immediately Invoked Function Expression (Executes Imediately)*/
