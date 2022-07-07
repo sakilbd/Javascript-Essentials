@@ -1,0 +1,2 @@
+1.Memory Leak: Memory leak is happened when there is unused variables or functions may be .
+2.Call Stack : 
