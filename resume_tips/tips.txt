@@ -1,0 +1,2 @@
+1.impact  : i have worked on sensometer with huge data .. previusly it took loots of time to load data.
+After working here I made data load instantly ... impacts for realtime monitoring for different parameters.
