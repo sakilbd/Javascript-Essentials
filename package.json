@@ -1,6 +1,6 @@
 {
 
     "type": "module",
-    "scripts": { "pwd": "echo $PWD" }
+    "scripts": { "start": "node test.js" }
 
 }

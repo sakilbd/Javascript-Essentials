@@ -33,13 +33,16 @@
 // };
 
 
-// var rotate = function(nums, k) {
-//     while (k--) {
-//         nums.unshift();
-//     }
-//     return nums.pop();
-// };
 
 
-// c(rotate([1, 2, 3, 4, 5, 6, 7], 3));
-console.log(process.cwd());
+const c = console.log.bind(console);
+//also time limit exceedes
+var rotate = function(nums, k) {
+    while (k--) {
+        nums.unshift();
+    }
+    return nums.pop();
+};
+
+
+c(rotate([1, 2, 3, 4, 5, 6, 7], 3));
