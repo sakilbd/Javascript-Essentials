@@ -1,40 +1,45 @@
-const c = console.log.bind(console);
+// https://leetcode.com/problems/rotate-array/
 
-var intersection = function(nums1, nums2) {
-    const numOne = nums1.sort((a, b) => a - b);
-    const numTwo = nums2.sort((a, b) => a - b);
-    // c(numOne);
-    // c(numTwo)
-    const res = [];
+// const c = console.log.bind(console);
 
-    if (numOne.length >= numTwo.length) {
-        numTwo.forEach((itemTwo) => {
-            let p = 0;
-            while (p < numOne.length) {
-                if (itemTwo == numOne[p]) {
-                    res.push(itemTwo);
-                    numOne.splice(p, 1);
-                    break;
-                }
-                p++;
-            }
-        });
-    } else {
-        numOne.forEach((itemTwo) => {
-            let p = 0;
-            while (p < numTwo.length) {
-                if (itemTwo == numTwo[p]) {
-                    res.push(itemTwo);
-                    numTwo.splice(p, 1);
-                    break;
-                }
-                p++;
-            }
-        });
-    }
+// var rotate = function(nums, k) {
+//     let i = 1;
+//     let j = nums.length - 1;
+//     let temp = 0;
+//     // nums.reverse();
+//     // return nums;
+//     while (i <= k) {
+//         temp = nums[j];
+//         while (j > 0) {
+//             if (j >= 1) {
+//                 // [nums[j], nums[j - 1]] = [nums[j - 1], nums[j]];
+//                 // c(nums[j])
+//                 // c(nums[j - 1])
+//                 nums[j] = nums[j - 1];
+//                 // c(nums[j])
+//                 // c(nums[j - 1])
 
-    return res;
-};
+//             }
+//             j--;
+//         }
+//         nums[0] = temp;
+//         j = nums.length - 1;
+//         i++;
+//         // c(nums);
+//         // break;
+//     }
+
+//     return nums;
+// };
 
 
-c(intersection([1, 2, 2, 1], [2, 2]));
+// var rotate = function(nums, k) {
+//     while (k--) {
+//         nums.unshift();
+//     }
+//     return nums.pop();
+// };
+
+
+// c(rotate([1, 2, 3, 4, 5, 6, 7], 3));
+console.log(process.cwd());
