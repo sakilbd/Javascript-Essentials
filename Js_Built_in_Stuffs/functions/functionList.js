@@ -23,3 +23,8 @@ arr.insert(0, 69) //returns [69,1,2,3,4]
 11. someString.charCodeAt(indexNumber) // returns specific indexed value of that character
 
 12. String.fromCharCode(code) ///converts charcode to character ....
+13.
+const set1 = new Set(someArray);
+const set2 = new Set(someArray2);
+
+[...set1].filter(n => set2.has(n)) //returns common elements of two arrays.
