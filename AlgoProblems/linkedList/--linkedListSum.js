@@ -34,30 +34,7 @@ class LinkedList {
         this.size++;
     }
 
-    insertAt(data, index) {
-        if (index > 0 && index > this.size) {
-            return;
-        }
-        if (index == 0) {
-            this.head = new ListNode(data, this.head);
-            return;
-        }
-        const node = new ListNode(data);
-        let current, previous;
-        current = this.head;
-        let count = 0;
-        while (count < index) {
-            previous = current;
-            count++;
-            current = current.next;
-        }
-        // c(current)
-        node.next = current;
-        previous.next = node;
-        this.size++;
 
-
-    }
 
     printListData() {
         let current = this.head;
@@ -69,22 +46,56 @@ class LinkedList {
     }
 }
 
-const ll = new LinkedList();
+const l1 = new LinkedList();
+const l2 = new LinkedList();
 // ll.insertFirst(10);
 // ll.insertFirst(20);
 // ll.insertFirst(23);
-ll.insertLast(64);
-ll.insertLast(65);
-ll.insertLast(66);
-ll.insertLast(69);
-ll.insertLast(100);
-ll.insertAt(21, 1);
-c(ll.head.val);
-// ll.insertFirst(30);
-// ll.insertFirst(60);
-// c(ll.insertFirst(10));
-// c(ll.insertFirst(20));
-// c(ll.insertFirst(30));
-// c(ll.insertFirst(400));
-// c(ll);
-ll.printListData();
+l1.insertLast(2);
+l1.insertLast(4);
+l1.insertLast(3);
+
+l2.insertLast(5);
+l2.insertLast(6);
+l2.insertLast(4);
+
+
+// c(l1.head);
+// c(l2.head);
+// l1=[9,9,9,9,9,9,9] //try this as entry
+// l2=[9,9,9,9]
+
+var addTwoNumbers = function(l1, l2) {
+
+    let sum = 0;
+    let current = new ListNode(0);
+    let result = current;
+
+    while (l1 || l2) {
+
+        if (l1) {
+            sum += l1.val;
+            l1 = l1.next;
+        }
+
+        if (l2) {
+            sum += l2.val;
+            l2 = l2.next;
+        }
+
+        current.next = new ListNode(sum % 10);
+        current = current.next;
+
+        sum = sum > 9 ? 1 : 0; //
+
+    }
+
+    if (sum) { //didnot get this how this is working
+
+        current.next = new ListNode(sum);
+
+    }
+
+    return result.next;
+};
+c(addTwoNumbers(l1.head, l2.head));
