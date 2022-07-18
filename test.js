@@ -51,7 +51,7 @@ class LinkedList {
             count++;
             current = current.next;
         }
-        c(current)
+        // c(current)
         node.next = current;
         previous.next = node;
         this.size++;
@@ -79,6 +79,7 @@ ll.insertLast(66);
 ll.insertLast(69);
 ll.insertLast(100);
 ll.insertAt(21, 1);
+c(ll.head.val);
 // ll.insertFirst(30);
 // ll.insertFirst(60);
 // c(ll.insertFirst(10));

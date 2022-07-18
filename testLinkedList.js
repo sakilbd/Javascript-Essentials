@@ -18,22 +18,50 @@ class LinkedList {
     }
     insertLast(data) {
         const node = new ListNode(data);
-        let current
-            // return !this.head
-        if (!this.head) { // this.head is not null means there is at least one node/value there
-            current = this.head;
+        let current;
+        // c(node)
+        if (!this.head) {
+            // this.head is not null means there is at least one node/value there
+            this.head = node;
         } else {
-            current = node;
+            current = this.head;
+            while (current.next) {
+                current = current.next;
+            }
 
+            current.next = node;
         }
-        while (current.next) {
+        this.size++;
+    }
+
+    insertAt(data, index) {
+        if (index > 0 && index > this.size) {
+            return;
+        }
+        if (index == 0) {
+            this.head = new ListNode(data, this.head);
+            return;
+        }
+        const node = new ListNode(data);
+        let current, previous;
+        current = this.head;
+        let count = 0;
+        while (count < index) {
+            previous = current;
+            count++;
             current = current.next;
         }
-        current.next = node;
+        // c(current)
+        node.next = current;
+        previous.next = node;
+        this.size++;
+
+
     }
 
     printListData() {
         let current = this.head;
+
         while (current) {
             console.log(current.val);
             current = current.next;
@@ -42,9 +70,16 @@ class LinkedList {
 }
 
 const ll = new LinkedList();
-ll.insertFirst(10);
+// ll.insertFirst(10);
 // ll.insertFirst(20);
-c(ll.insertLast(69));
+// ll.insertFirst(23);
+ll.insertLast(64);
+ll.insertLast(65);
+ll.insertLast(66);
+ll.insertLast(69);
+ll.insertLast(100);
+ll.insertAt(21, 1);
+c(ll.head.val);
 // ll.insertFirst(30);
 // ll.insertFirst(60);
 // c(ll.insertFirst(10));
