@@ -117,12 +117,13 @@ class LinkedList {
 }
 
 const ll = new LinkedList();
-ll.insertFirst(100);
-ll.insertFirst(200);
-ll.insertFirst(300);
+// ll.insertFirst(100);
+// ll.insertFirst(200);
+// ll.insertFirst(300);
 ll.insertLast(400);
-ll.insertAt(500, 0);
-ll.removeAt(33);
+ll.insertLast(500);
+// ll.insertAt(500, 0);
+// ll.removeAt(33);
 
 ll.printListData();
 // ll.clearList();
