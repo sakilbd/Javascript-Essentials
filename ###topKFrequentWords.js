@@ -1,4 +1,5 @@
 // https://leetcode.com/problems/top-k-frequent-words/
+//https://leetcode.com/problems/top-k-frequent-elements/submissions/
 
 const c = console.log.bind(console);
 
@@ -63,4 +64,6 @@ var topKFrequent = function(words, k) {
 
 
 // c(topKFrequent(["i", "love", "leetcode", "i", "love", "coding"], 2))
-c(topKFrequent(["the", "day", "is", "sunny", "the", "the", "the", "sunny", "is", "is"], 3))
+// c(topKFrequent(["the", "day", "is", "sunny", "the", "the", "the", "sunny", "is", "is"], 3))
+
+c(topKFrequent([1, 1, 1, 2, 2, 3], 2))
