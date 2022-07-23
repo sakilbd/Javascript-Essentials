@@ -1,3 +1,4 @@
+// https://leetcode.com/problems/shortest-distance-to-a-character/solution/
 const p = console.log.bind(console);
 
 var shortestToChar = function(s, c) {
