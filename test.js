@@ -6,25 +6,48 @@ var shortestToChar = function(s, c) {
     let cIndexes = [];
 
     for (let i in s) {
-        if (s[i] == 'e') { cIndexes.push(i); }
+        if (s[i] == c) { cIndexes.push(i); }
 
     }
     let res = [];
     let j = 0;
-    for (let i in s) {
+    // return cIndexes;
+    const resArray = new Array(s.length).fill(0);
+    return resArray.map((item, i) => {
+        // p(item)
 
+
+        // if (i <= cIndexes[j]) {
+
+        // } else {
+        //     j++;
+        // }
+        var res = Math.abs(i - cIndexes[j]);
+        return res;
         if (i <= cIndexes[j]) {
-            p(j)
+            // var res = Math.abs(i - cIndexes[j - 1]) < Math.abs(i - cIndexes[j]) ? Math.abs(i - cIndexes[j - 1]) : Math.abs(i - cIndexes[j])
+            var res = Math.abs(i - cIndexes[j]);
+            return res;
         } else {
             j++;
-        }
-        if (i <= cIndexes[j]) {
-            // p(i)
+
+            // var res2 = Math.abs(i - cIndexes[j - 1]) < Math.abs(i - cIndexes[j]) ? Math.abs(i - cIndexes[j - 1]) : Math.abs(i - cIndexes[j])
+            if (cIndexes.length == 1) {
+                var res2 = Math.abs(i - cIndexes[j]) > Math.abs(i - cIndexes[j - 1]) ? Math.abs(i - cIndexes[j]) : Math.abs(i - cIndexes[j - 1])
+            } else {
+                var res2 = Math.abs(i - cIndexes[j - 1]) < Math.abs(i - cIndexes[j]) ? Math.abs(i - cIndexes[j - 1]) : Math.abs(i - cIndexes[j])
+            }
+            return res2
         }
 
-    }
 
-    // return cIndexes;
+
+    })
+
 };
 
-p(shortestToChar("loveleetcode", "e"));
+// p(shortestToChar("loveleetcode", "e"));
+
+// p(shortestToChar("aaab", "b"));
+p(shortestToChar("aaba", "b"));
+p(shortestToChar("abaa", "b"));
