@@ -1,17 +1,22 @@
-//https://www.hackerrank.com/challenges/circular-array-rotation/problem?isFullScreen=true
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator#Relationship_with_the_optional_chaining_operator_
+// https://leetcode.com/problems/number-of-1-bits/
+
 const c = console.log.bind(console);
-//some test cases time complexities error
-function circularArrayRotation(a, k, queries) {
-    while (k--) {
-        let arr = a.splice(a.length - 1, a.length);
-        a.splice(0, 0, ...arr);
-        // c(a);
+
+//toString(2) accepts the solution otherwise test case fail.. dont know why man
+var hammingWeight = function(n) {
+    let stringConvert = n.toString(2).split('');
+    // return stringConvert;
+
+    let count = 0
+    for (let i = 0; i < stringConvert.length; i++) {
+        if (stringConvert[i] == 1) {
+            count++;
+        }
+
 
     }
-    return queries.map(item => {
-        return a[item];
-    })
+    return count;
+};
 
-}
-
-c(circularArrayRotation([3, 4, 5], 2, [1, 2]))
+c(hammingWeight("11111111111111111111111111111101"))
