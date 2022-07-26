@@ -28,3 +28,7 @@ const set1 = new Set(someArray);
 const set2 = new Set(someArray2);
 
 [...set1].filter(n => set2.has(n)) //returns common elements of two arrays.
+
+14. array.splice(0, 2); //cuts first two element of array 
+15. array.slice(2) //cuts rest of the array with starting index 2
+15. array.slice(2, 5) //cuts rest of the array with starting index 2 and ends with index 5
