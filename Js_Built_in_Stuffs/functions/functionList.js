@@ -32,3 +32,6 @@ const set2 = new Set(someArray2);
 14. array.splice(0, 2); //cuts first two element of array 
 15. array.slice(2) //cuts rest of the array with starting index 2
 15. array.slice(2, 5) //cuts rest of the array with starting index 2 and ends with index 5
+16.
+var ret = "data-123".replace('data-', '');
+console.log(ret); //prints: 123
