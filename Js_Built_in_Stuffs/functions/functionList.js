@@ -29,6 +29,11 @@ const set2 = new Set(someArray2);
 
 [...set1].filter(n => set2.has(n)) //returns common elements of two arrays.
 
+let set3 = new Set();
+set3.add('1'); //add distinct items to set 
+set3.add('1'); //doesn't add '1' twice as 1 is always there
+set1.has(1) //returns true
+
 14. array.splice(0, 2); //cuts first two element of array 
 15. array.slice(2) //cuts rest of the array with starting index 2
 15. array.slice(2, 5) //cuts rest of the array with starting index 2 and ends with index 5
