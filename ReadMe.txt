@@ -1,5 +1,5 @@
 1.Must have node installed in the system to run js code 
-2.command: node fileName.js(node linkedList.js)
+2.command to run js file: node fileName.js(node linkedList.js)
 3."---" means some test case failed need to solve those .
 4."+++" means some test case failed and solved with community help.
 4."###" similar problems arises after submission.
