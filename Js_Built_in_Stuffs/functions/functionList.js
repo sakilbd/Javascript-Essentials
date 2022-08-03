@@ -40,3 +40,5 @@ set1.has(1) //returns true
 16.
 var ret = "data-123".replace('data-', '');
 console.log(ret); //prints: 123
+
+17. Math.trunc(4.23) //returns int part only which is 4 as like floor.
