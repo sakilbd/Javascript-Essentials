@@ -1,6 +1,9 @@
 {
 
     "type": "module",
-    "scripts": { "start": "node test.js" }
+    "scripts": {
+        "start": "node test.js"
+
+    }
 
 }

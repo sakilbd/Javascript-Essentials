@@ -42,3 +42,7 @@ var ret = "data-123".replace('data-', '');
 console.log(ret); //prints: 123
 
 17. Math.trunc(4.23) //returns int part only which is 4 as like floor.
+18. Math.cbrt(64) // returns 4 as 4^3=64
+19.!Number.isInteger(num / 4) // check if num is float or double in js
+20. Math.cbrt(64) //qube root 
+21. Math.ceil(Math.pow(256, 1 / n)); //n root of a number if n ==4 answer is 4;
