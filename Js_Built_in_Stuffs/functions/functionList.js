@@ -46,3 +46,5 @@ console.log(ret); //prints: 123
 19.!Number.isInteger(num / 4) // check if num is float or double in js
 20. Math.cbrt(64) //qube root 
 21. Math.ceil(Math.pow(256, 1 / n)); //n root of a number if n ==4 answer is 4;
+22.
+let arr = Array(n).fill().map((_, idx) => start + idx); //returns [1,2,3,4,5,6,7,8,9] inf n =9 and start =1
