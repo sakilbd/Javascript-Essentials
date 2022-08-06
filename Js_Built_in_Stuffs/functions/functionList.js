@@ -51,3 +51,6 @@ let arr = Array(n).fill().map((_, idx) => start + idx); //returns [1,2,3,4,5,6,7
 
 23.
 var grid = [...Array(2)].map(e => Array(3).fill(0)); // crates 2*3 array with "0" on each element
+
+24.
+let difference = arr1.filter(x => !arr2.includes(x)); //finds difference between two arrays
