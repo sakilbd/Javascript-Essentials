@@ -48,3 +48,6 @@ console.log(ret); //prints: 123
 21. Math.ceil(Math.pow(256, 1 / n)); //n root of a number if n ==4 answer is 4;
 22.
 let arr = Array(n).fill().map((_, idx) => start + idx); //returns [1,2,3,4,5,6,7,8,9] inf n =9 and start =1
+
+23.
+var grid = [...Array(2)].map(e => Array(3).fill(0)); // crates 2*3 array with "0" on each element
