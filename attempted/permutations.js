@@ -28,4 +28,6 @@ const permutations = arr => {
 };
 
 
-c(solve([0, 2, 3, 0]))
+// c(solve([0, 2, 3, 0]))
+
+c(permutations(["a", "e", "i", "o", "u"]))
