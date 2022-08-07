@@ -129,11 +129,6 @@ var isValidSudoku = function(board) {
     let checkWholeNineArray = numRepeatCheck(resArray);
     return checkWholeNineArray == false ? false : true;
 };
-
-
-
-
-
 const numRepeatCheck = (resArray) => {
     for (let i in resArray) {
         if (resArray[i].length != 0) {
@@ -143,6 +138,60 @@ const numRepeatCheck = (resArray) => {
         // }
     }
 };
+
+
+
+
+
+
+////optimal soluition 
+
+// var isValidSudoku = function(board) {
+//     let n = 9;
+
+//     let rows = [],cols=[],boxes=[];
+//     for (let r = 0; r < n; r++) {
+//         rows[r] = new Map();
+//         cols[r] = new Map();
+//         boxes[r] = new Map();
+//     }
+
+//     for (let r = 0; r < n; r++) {
+//         for (let c = 0; c < n; c++) {
+//             let val = board[r][c];
+
+//             // Check if the position is filled with number
+//             if (val == '.') {
+//                 continue;
+//             }
+
+//             // Check the row
+//             if (rows[r].has(val)) {
+//                 return false;
+//             }
+//             rows[r].set(val);
+
+//             // Check the column
+//             if (cols[c].has(val)) {
+//                 return false;
+//             }
+//             cols[c].set(val);
+
+//             // Check the box
+//             let idx = Math.floor(r / 3) * 3 + Math.floor(c / 3);
+//             if (boxes[idx].has(val)) {
+//                 return false;
+//             }
+//             boxes[idx].set(val);
+//         }
+//     }
+//     return true;
+// };
+
+
+
+
+
 
 
 // c(
