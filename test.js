@@ -6,7 +6,34 @@ var isValidSudoku = function(board) {
     var resArray = [...Array(9)].map((item) => Array());
     // return resArray;
     let i = 0;
+    let borderArrays = [...Array(4)].map(item => Array())
 
+    for (let i in board) {
+        if (board[i][0] != ".") {
+            borderArrays[0].push(board[i][0])
+        }
+    }
+    for (let i in board) {
+        if (board[i][board[i].length - 1] != ".") {
+
+            borderArrays[1].push(board[i][board[i].length - 1])
+        }
+    }
+    for (let i in board[0]) {
+        if (board[0][i] != ".") {
+            borderArrays[2].push(board[0][i])
+        }
+    }
+    for (let i in board[board.length - 1]) {
+        if (board[board.length - 1][i] != '.') {
+            borderArrays[3].push(board[board.length - 1][i])
+        }
+
+    }
+    // borderArrays[2].push(board[0]);
+    // borderArrays[3].push([board[board.length - 1]].split());
+    // borderArrays[0].push(lerfItemArray);
+    // return borderArrays;
     if (i > 2 && i < 6) {
         i += 3;
         j += 3;
@@ -21,7 +48,7 @@ var isValidSudoku = function(board) {
         for (let i = p; i < iRange; i++) {
             // c(i);
             for (let k = j; k < jRange; k++) {
-                if (arr[i][k] != '.') {
+                if (arr[i][k] != ".") {
                     resArray[resArrayIdx].push(arr[i][k]);
                 }
             }
@@ -40,27 +67,37 @@ var isValidSudoku = function(board) {
         } else if (key >= 3 && key < 6) {
             iIdx = 3;
 
-            // c(key)
-            // sudokuBuilder(board, iIdx, jIdx, key);
             sudokuBuilder(board, iIdx, jIdx, key);
 
             jIdx += 3;
         } else if (key >= 6 && key < 9) {
             iIdx = 6;
 
-            // c(key)
-            // sudokuBuilder(board, iIdx, jIdx, key);
             sudokuBuilder(board, iIdx, jIdx, key);
 
             jIdx += 3;
         }
     });
-    // sudokuBuilder(board, 0, 0, 3, 3);
 
-    // i = i - 3;
 
-    return resArray;
-};
+    let checkBoarderArray = numRepeatCheck(borderArrays);
+
+    if (checkBoarderArray == false) {
+        return false;
+    }
+    let checkWholeNineArray = numRepeatCheck(resArray);
+    return checkWholeNineArray == false ? false : true;
+
+
+}
+
+const numRepeatCheck = (resArray) => {
+    for (let i in resArray) {
+
+        if ([...new Set(resArray[i])].length != resArray[i].length) return false;
+    }
+}
+
 
 c(
     isValidSudoku([
@@ -72,6 +109,6 @@ c(
         ["7", ".", ".", ".", "2", ".", ".", ".", "6"],
         [".", "6", ".", ".", ".", ".", "2", "8", "."],
         [".", ".", ".", "4", "1", "9", ".", ".", "5"],
-        [".", ".", ".", ".", "8", ".", ".", "7", "9"],
+        ["8", ".", ".", ".", "8", ".", ".", "7", "9"],
     ])
 );
