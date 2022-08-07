@@ -1,6 +1,5 @@
 // https://leetcode.com/problems/count-vowels-permutation/
-const c = console.log.bind(console)
-
+const c = console.log.bind(console);
 
 const mod = 1e9 + 7;
 const countVowelPermutation = (n) => {
@@ -22,5 +21,4 @@ const countVowelPermutation = (n) => {
     return res;
 };
 
-
-c(countVowelPermutation(5))
+c(countVowelPermutation(5));
