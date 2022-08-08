@@ -124,11 +124,11 @@ class LinkedList {
         current = this.head;
         while (current.next) {
             previous = current;
-            if (current.val == itemTodlt) {
+            if (current.data == itemTodlt) {
                 // c(current);
                 // c(previous);
                 current = current.next;
-                previous.val = current.val;
+                previous.data = current.data;
                 previous.next = current.next;
                 // break;
 
@@ -136,7 +136,7 @@ class LinkedList {
 
         }
 
-
+        // return previous;
 
     }
     printNodes() {
@@ -166,17 +166,17 @@ const ll = new LinkedList();
 // ll.insertFirst(100);
 // ll.insertFirst(200);
 // ll.insertFirst(300);
-ll.insertLast(400);
-ll.insertLast(500);
-// ll.insertAt(500, 0);
-// ll.removeAt(33);
-ll.insertAt(200, 0);
+// ll.insertLast(400);
+// ll.insertLast(500);
+// // ll.insertAt(500, 0);
+// // ll.removeAt(33);
+// ll.insertAt(200, 0);
 
-ll.printListData();
+// ll.printListData();
 
 
 
-ll.insertFirst(5);
+// ll.insertFirst(5);
 ll.insertFirst(6);
 ll.insertLast(4);
 ll.insertLast(18);
@@ -186,8 +186,8 @@ ll.insertFirst(12);
 
 ll.insertFirst(4);
 ll.insertFirst(5);
-ll.insertFirst(5);
-ll.insertFirst(4);
+// ll.insertFirst(5);
+// ll.insertFirst(4);
 
 
 
@@ -198,6 +198,6 @@ c(ll.printNodes());
 
 // c(ll.removeAt(2));
 
-c(ll.removeElement(100))
+c(ll.removeElement(4))
 c(ll.printNodes());
 // ll.clearList();
