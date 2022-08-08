@@ -1,3 +1,6 @@
+// https://leetcode.com/problems/missing-number/
+
+
 const c = console.log.bind(console);
 
 var missingNumber = function(nums) {
@@ -19,8 +22,9 @@ var missingNumber = function(nums) {
 
 let testArr = [];
 for (let p = 0; p < 10000; p++) {
-    if (p == 889) {} else {
+    if (p == 8965) {} else {
         testArr.push(p);
     }
 }
+
 c(missingNumber(testArr));
