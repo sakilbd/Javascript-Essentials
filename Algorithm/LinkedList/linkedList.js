@@ -163,6 +163,10 @@ class LinkedList {
 }
 
 const ll = new LinkedList();
+let array = [1, 2, 6, 3, 4, 6, 6, 5, 6];
+for (let i of array) {
+    ll.insertLast(i);
+}
 // ll.insertFirst(100);
 // ll.insertFirst(200);
 // ll.insertFirst(300);
@@ -177,27 +181,27 @@ const ll = new LinkedList();
 
 
 // ll.insertFirst(5);
-ll.insertFirst(6);
-ll.insertLast(4);
-ll.insertLast(18);
+// ll.insertFirst(6);
+// ll.insertLast(4);
+// ll.insertLast(18);
 
 
-ll.insertFirst(12);
+// ll.insertFirst(12);
 
-ll.insertFirst(4);
-ll.insertFirst(5);
-// ll.insertFirst(5);
 // ll.insertFirst(4);
+// ll.insertFirst(5);
+// // ll.insertFirst(5);
+// // ll.insertFirst(4);
 
 
 
-ll.insertAt(2, 2);
+// ll.insertAt(2, 2);
 
+// c(ll.printNodes());
+
+
+// // c(ll.removeAt(2));
 c(ll.printNodes());
-
-
-// c(ll.removeAt(2));
-
-c(ll.removeElement(4))
+c(ll.removeElement(6))
 c(ll.printNodes());
 // ll.clearList();

@@ -35,6 +35,39 @@ class LinkedList {
         }
         this.size++;
     }
+    removeElement(itemTodlt) {
+        if (this.head == null) {
+            return null;
+        }
+        let current, previous;
+
+        current = this.head;
+
+        while (current.next) {
+            previous = current;
+            // c(current.val);
+            if (current.val == itemTodlt) {
+                // c(JSON.stringify(previous))
+                current = current.next;
+                previous.val = current.val;
+                previous.next = current.next;
+
+                // break;
+            } else {
+                current = current.next;
+            }
+        }
+        if (current.val == itemTodlt) {
+            // c('fuck')
+            // c(previous);
+            // current = current.next;
+            previous.next = null;
+            // c(current);
+        }
+
+        // return previous;
+        return this.head;
+    }
     printNodes() {
         // return this.size;
         return JSON.stringify(this.head);
@@ -50,63 +83,65 @@ class LinkedList {
 }
 
 const l1 = new LinkedList();
-const l2 = new LinkedList();
+
 // ll.insertFirst(10);
 // ll.insertFirst(20);
 // ll.insertFirst(23);
-let array = [1, 2, 6, 3, 4, 5, 6];
+let array = [1, 2, 6, 6, 3, 4, 5, 6];
+// let array = [7, 7, 7, 7];
+
 for (let i of array) {
     l1.insertLast(i);
 }
-c(l1.printNodes())
-    // l1.insertLast(2);
-    // l1.insertLast(4);
-    // l1.insertLast(3);
-var removeElements = function(head, val) {
-
-
-    // this.headNode = head;"
-    let listHead = new ListNode(-1, head);
-    // listHead.next = head;
-    // return JSON.stringify(listHead);
-    head = listHead;
-    let current, previous, headNode;
-    current = head.next;
-    // return currentl;
-    previous = current;
-    while (current.next) {
-
-        if (current.val == val) {
-            current = current.next;
-
-            previous.val = current.val;
-            previous.next = current.next;
-
-        } else {
-            // head = head.next;
-            current = current.next;
-            // c(current)
-        }
-    }
-
-    // return JSON.stringify(head.next);
-};
-
-// let removeElements = function(head, val) {
-//     let h = new ListNode(-1);
-//     h.next = head;
-//     // return JSON.stringify(h.next);
-//     head = h;
+// c(l1.printNodes());
+// l1.insertLast(2);
+// l1.insertLast(4);
+// l1.insertLast(3);
+// var removeElements = function(head, val) {
 //     // return JSON.stringify(head)
-//     while (h.next !== null) {
-//         // c(JSON.stringify(h))
-//         if (h.next.val === val) {
-//             h.next = h.next.next;
+//     c()
+//         // this.headNode = head;"
+//     let listHead = new ListNode(-1, head);
+//     // listHead.next = head;
+//     // return JSON.stringify(listHead);
+//     head = listHead;
+//     let current, previous, headNode;
+//     current = head.next;
+//     // return currentl;
+//     previous = current;
+//     while (current.next) {
+
+//         if (current.val == val) {
+//             current = current.next;
+
+//             previous.val = current.val;
+//             previous.next = current.next;
+
 //         } else {
-//             h = h.next;
+//             // head = head.next;
+//             current = current.next;
+//             // c(current)
 //         }
 //     }
-//     return JSON.stringify(head.next);
+
+//     return JSON.stringify(head);
 // };
+
+let removeElements = function(head, val) {
+    let h = new ListNode(-1);
+    h.next = head;
+    // return JSON.stringify(h.next);
+    head = h;
+    // return JSON.stringify(head)
+    while (h.next !== null) {
+        // c(JSON.stringify(h))
+        if (h.next.val === val) {
+            h.next = h.next.next;
+        } else {
+            h = h.next;
+        }
+    }
+    return JSON.stringify(head.next);
+};
 
 c(removeElements(l1.head, 6));
