@@ -1,3 +1,4 @@
+const c = console.log.bind(console);
 class Node {
     constructor(data, next = null) {
         this.data = data;
@@ -97,6 +98,51 @@ class LinkedList {
         }
         this.size--;
     }
+    removeAt(idx) {
+        if (idx > 0 && idx > this.size) {
+            return;
+        }
+        let count = 0;
+        let previous, current;
+        current = this.head;
+        if (idx == 0) {
+            this.head = current.next;
+        } else {
+            while (count < idx) {
+                previous = current;
+                current = current.next;
+                count++;
+            }
+        }
+        previous.next = current.next;
+        // return this.head;
+    }
+    removeElement(itemTodlt) {
+
+        let current, previous;
+
+        current = this.head;
+        while (current.next) {
+            previous = current;
+            if (current.val == itemTodlt) {
+                // c(current);
+                // c(previous);
+                current = current.next;
+                previous.val = current.val;
+                previous.next = current.next;
+                // break;
+
+            } else { current = current.next; }
+
+        }
+
+
+
+    }
+    printNodes() {
+        // return this.size;
+        return JSON.stringify(this.head);
+    }
 
     //Clear List 
     clearList() {
@@ -127,4 +173,31 @@ ll.insertLast(500);
 ll.insertAt(200, 0);
 
 ll.printListData();
+
+
+
+ll.insertFirst(5);
+ll.insertFirst(6);
+ll.insertLast(4);
+ll.insertLast(18);
+
+
+ll.insertFirst(12);
+
+ll.insertFirst(4);
+ll.insertFirst(5);
+ll.insertFirst(5);
+ll.insertFirst(4);
+
+
+
+ll.insertAt(2, 2);
+
+c(ll.printNodes());
+
+
+// c(ll.removeAt(2));
+
+c(ll.removeElement(100))
+c(ll.printNodes());
 // ll.clearList();

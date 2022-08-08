@@ -87,11 +87,7 @@ class linkedList {
             } else { current = current.next; }
 
         }
-        // c(current);
-        // c(previous)
 
-
-        // return this.head;
 
 
     }
