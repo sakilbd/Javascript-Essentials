@@ -65,15 +65,27 @@ c(l1.printNodes());
 // l1.insertLast(2);
 // l1.insertLast(4);
 // l1.insertLast(3);
-var removeElements = function(head, val) {
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
 
-
-
-    // return JSON.stringify(newList.next)
-
-    return JSON.stringify(head);
+/**
+ * @param {ListNode} head
+ * @return {boolean}
+ */
+var hasCycle = function(head) {
+    while (head) {
+        if (head.visited) return true;
+        head.visited = true;
+        head = head.next;
+    }
+    return false;
 };
 
 
-
-c(removeElements(l1.head, 6));
+// couldnt create a head with circular linked list might create later 
+// c(removeElements(l1.head, 6));
