@@ -13,11 +13,14 @@
  * @param {ListNode} head
  * @return {boolean}
  */
+
+
 var hasCycle = function(head) {
-    while (head) {
-        if (head.visited) return true;
-        head.visited = true;
+    let fast = head;
+    while (fast && fast.next) {
         head = head.next;
+        fast = fast.next.next;
+        if (head === fast) return true;
     }
     return false;
 };
