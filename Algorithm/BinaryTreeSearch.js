@@ -39,6 +39,7 @@ class BinaryTree {
                 }
             }
         }
+        return JSON.stringify(this.root)
     }
     find(value) {
         if (this.root == null) return false;
@@ -66,25 +67,25 @@ class BinaryTree {
 
 var tree = new BinaryTree();
 
-// c(JSON.stringify(tree.insert(10)));
-// c(JSON.stringify(tree.insert(2)));
-// c(JSON.stringify(tree.insert(15)));
-// c(JSON.stringify(tree.insert(17)));
-// c(JSON.stringify(tree.insert(19)));
+c(JSON.stringify(tree.insert(10)));
+c(JSON.stringify(tree.insert(5)));
+c(JSON.stringify(tree.insert(13)));
+c(JSON.stringify(tree.insert(2)));
+c(JSON.stringify(tree.insert(7)));
 
 // c(tree.insert(2));
 // c(tree.insert(15));
 // c(tree.insert(17));
 // c(tree.insert(19));
 
-tree.insert(10);
+// tree.insert(10);
 
-tree.insert(15);
-tree.insert(14);
-tree.insert(17);
-tree.insert(19);
-tree.insert(16);
+// tree.insert(15);
+// tree.insert(14);
+// tree.insert(17);
+// tree.insert(19);
+// c(tree.insert(16));
 
-c(tree.find(10));
+// c(tree.find(10));
 
 // c((JSON.stringify(tree)));
