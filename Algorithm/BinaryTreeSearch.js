@@ -1,3 +1,5 @@
+// https://vanya.jp.net/vtree/
+
 const c = console.log.bind(console);
 
 class Node {

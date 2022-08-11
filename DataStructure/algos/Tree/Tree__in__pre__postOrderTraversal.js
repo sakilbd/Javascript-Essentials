@@ -2,7 +2,6 @@
 // https://leetcode.com/problems/binary-tree-inorder-traversal/
 // https://leetcode.com/problems/binary-tree-postorder-traversal/
 
-
 // https://www.youtube.com/watch?v=gm8DUJJhmY4&t=268s&ab_channel=mycodeschool
 // https://www.youtube.com/watch?v=-b2lciNd2L4&ab_channel=Jenny%27slecturesCS%2FITNET%26JRF
 const c = console.log.bind(console);
@@ -82,68 +81,58 @@ for (let i of binaryTreeArray) {
     tree.insert(i);
 }
 
-// preorderTraversal
-// var preorderTraversal = function(root) {
-//     let res = [];
-//     helper(root, res);
-//     return res;
-// };
-
-// var helper = (root, res) => {
-//     if (root == null) {
-//         return;
-//     }
-//     res.push(root.val);
-//     helper(root.left, res);
-//     helper(root.right, res);
-// };
-
-
-// inorderTraversal
-var inorderTraversal = function(root) {
+var inOrderTraversal = function(root) {
     let res = [];
-    helper(root, res)
-    return res;
-};
-var helper = (root, res) => {
-    if (root == null) {
-        return;
+
+    function check(root) {
+        if (root == null) {
+            return;
+        }
+
+        check(root.left);
+        res.push(root.val);
+        check(root.right);
     }
 
-    helper(root.left, res);
-    res.push(root.val);
-    helper(root.right, res);
+    check(root);
 
+    return res;
 };
+var preOrderTraversal = function(root) {
+    let res = [];
 
+    function check(root) {
+        if (root == null) {
+            return;
+        }
+        res.push(root.val);
+        check(root.left);
+        check(root.right);
+    }
 
-///postorderTraversal
-// var postorderTraversal = function(root) {
+    check(root);
 
-//     let res = [];
-//     // return root;
+    return res;
+};
+var postOrderTraversal = function(root) {
+    let res = [];
 
-//     helper(root, res)
+    function check(root) {
+        if (root == null) {
+            return;
+        }
 
+        check(root.left);
+        check(root.right);
+        res.push(root.val);
+    }
 
+    check(root);
 
-//     return res;
-// };
-// var helper = (root, res) => {
-//     if (root == null) {
-//         return;
-//     }
-
-//     helper(root.left, res);
-
-//     helper(root.right, res);
-//     res.push(root.val);
-
-// };
-
-
-//inorderTraversal works in leet code but doesnot work here in node.js .. dont know why the fuck 
+    return res;
+};
+//inorderTraversal works in leet code but doesnot work here in node.js .. dont know why the fuck
 
 // c(preorderTraversal(tree.root));
-c(inorderTraversal((tree.root)));
-// c(postorderTraversal((tree.root)))
+c(inOrderTraversal(tree.root));
+c(postOrderTraversal((tree.root)))
