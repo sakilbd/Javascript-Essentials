@@ -19,3 +19,35 @@
         }
     }
 }
+
+
+//symantic tree(same on both nodes)
+{
+    "val": 5,
+    "left": {
+        "val": 8,
+        "left": {
+            "val": 6,
+            "left": null,
+            "right": null
+        },
+        "right": {
+            "val": 9,
+            "left": null,
+            "right": null
+        }
+    },
+    "right": {
+        "val": 8,
+        "left": {
+            "val": 6,
+            "left": null,
+            "right": null
+        },
+        "right": {
+            "val": 9,
+            "left": null,
+            "right": null
+        }
+    }
+}
