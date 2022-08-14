@@ -2,7 +2,7 @@ const c = console.log.bind(console);
 //breadth first search working for both binary search tree and binary tree
 
 var BFS = function(root) {
-
+    if (!root) return [];
     let queue = [];
     let data = [];
     queue.push(root);
