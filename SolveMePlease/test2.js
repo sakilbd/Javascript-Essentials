@@ -11,6 +11,7 @@ var fullJustify = function(words, maxWidth) {
         if (sentence.length < maxWidth) {
             sentenceWords.push(words[i]);
             sentence = concatWords(sentenceWords);
+
             i++;
             c("sldfjsl;ajdf");
 
