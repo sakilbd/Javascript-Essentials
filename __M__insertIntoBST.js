@@ -91,6 +91,22 @@ var insertIntoBST = function(root, val) {
 
 };
 
+
+//recursive solution from leetcode
+// var insertIntoBST = function(root, val) {
+//     if(!root) {
+//         return new TreeNode(val);
+//     }
+//     if(val > root.val){
+//         root.right = insertIntoBST(root.right, val);
+//     }
+//     else {
+//         root.left = insertIntoBST(root.left, val);
+//     }
+//     return root;
+// };
+
+
 c(insertIntoBST(root, 62));
 // c(searchBST(root, 8))
 

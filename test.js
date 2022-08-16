@@ -72,6 +72,24 @@ class BinaryTree {
         return this.root;
         // return JSON.stringify(this.root);
     }
+    find(value) {
+        if (this.root == null) return false;
+        var current = this.root,
+            found = false;
+        while (!current && !found) {
+            if (value < current.value) {
+                current = current.left
+            } else if (value > current.value) {
+                current = current.right
+
+            } else {
+                return true
+            }
+        }
+
+        return false;
+
+    }
 
 }
 
@@ -91,21 +109,6 @@ var insertIntoBST = function(root, val) {
 
 };
 
-
-//Recursive solution from leetcode
-// var insertIntoBST = function(root, val) {
-//     if(!root) {
-//         return new TreeNode(val);
-//     }
-//     if(val > root.val){
-//         root.right = insertIntoBST(root.right, val);
-//     }
-//     else {
-//         root.left = insertIntoBST(root.left, val);
-//     }
-//     return root;
-// };
-
 c(insertIntoBST(root, 62));
 // c(searchBST(root, 8))
 
@@ -116,10 +119,10 @@ c(insertIntoBST(root, 62));
 
 // c(tree.insert(root));
 
-// var searchBST = function(root, val) {
-//     var tree = new BinaryTree();
-//     let treeRoot = tree.insert(root);
-//     // c(treeRoot)
-//     return tree.find(5)
-//         // return root
-// };
+var searchBST = function(root, val) {
+    var tree = new BinaryTree();
+    let treeRoot = tree.insert(root);
+    // c(treeRoot)
+    return tree.find(5)
+        // return root
+};
