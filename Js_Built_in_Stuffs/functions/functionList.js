@@ -20,7 +20,10 @@ arr.insert(0, 69) //returns [69,1,2,3,4]
     })("parameterOne")
     /*IIFT :Immediately Invoked Function Expression (Executes Imediately)*/
 10. someDigit.toString(2) //boom converts to binary
-11. someString.charCodeAt(indexNumber) // returns specific indexed value of that character
+11. a.someString.charCodeAt(indexNumber) // returns specific indexed value of that character
+b.
+"a".charCodeAt(); //return 97 which is code of "a"
+c.String.fromCharCode(97); //returns "a" as 97 is the code of "a"
 
 12. String.fromCharCode(code) ///converts charcode to character ....
 13.
