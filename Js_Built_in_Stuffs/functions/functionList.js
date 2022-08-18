@@ -57,3 +57,8 @@ var grid = [...Array(2)].map(e => Array(3).fill(0)); // crates 2*3 array with "0
 
 24.
 let difference = arr1.filter(x => !arr2.includes(x)); //finds difference between two arrays
+25.
+let map = { "1": 2, "2": 3, "3": 4 };
+Object.keys(map).forEach((key, i) => {
+    c(key) //returns 1,2,3
+})

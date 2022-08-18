@@ -17,6 +17,7 @@ var majorityElement = function(nums) {
         if (map[key] >= count) {
             res = key;
         }
+
     })
     return res;
 };
