@@ -37,7 +37,13 @@ set3.add('1'); //add distinct items to set
 set3.add('1'); //doesn't add '1' twice as 1 is always there
 set1.has(1) //returns true
 
-14. array.splice(0, 2); //cuts first two element of array 
+14.
+let arr = [1, 2, 3, 4]
+a.array.splice(0, 2); //cuts first two element of array ... arr = [4]
+b.array.splice(2, 1); //removes 2th endex second element only ...arr = [1,2,4]
+c.array.splice(-n); //removes last n elements of array ...arr = [1,2,3] if n is -1
+d.array.splice(-n, 1); //removes nth element from last of an array ...arr = [1,2,4] if n is 2
+
 15. array.slice(2) //cuts rest of the array with starting index 2
 15. array.slice(2, 5) //cuts rest of the array with starting index 2 and ends with index 5
 16.
