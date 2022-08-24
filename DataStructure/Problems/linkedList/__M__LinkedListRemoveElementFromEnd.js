@@ -26,12 +26,6 @@ class LinkedList {
         this.head = head;
         this.size = 0;
     }
-    insertFirst(data) {
-        const node = new ListNode(data, this.head);
-        this.head = node;
-        this.size++;
-        // c(this.head);
-    }
     insertLast(data) {
         const node = new ListNode(data);
         let current;
@@ -52,18 +46,12 @@ class LinkedList {
 
     printNodes() {
         // return this.size;
-        return JSON.stringify(this.head);
+        return this.head;
     }
-    printListData() {
-        let current = this.head;
 
-        while (current) {
-            console.log(current.val);
-            current = current.next;
-        }
-    }
 }
 
+// done by me 
 var removeNthFromEnd = function(head, n) {
 
     let headToArray = [];
@@ -72,9 +60,37 @@ var removeNthFromEnd = function(head, n) {
         head = head.next;
     }
     headToArray.push(head.val);
-    headToArray.splice(-n, 1)
-    return headToArray;
+    headToArray.splice(-n, 1);
+
+    let ll = new LinkedList();
+    for (let i of headToArray) {
+        ll.insertLast(i);
+    }
+    return ll.head;
 };
 
+
+//from community
+// var removeNthFromEnd = function(head, n) {
+//     let headNode = head;
+//     let nodes = [];
+//     while (headNode.next !== null) {
+//       nodes.push(headNode);
+//       headNode = headNode.next;
+//     }
+//     nodes.push(headNode);
+//     if (nodes.length === 1 && n === 1) {
+//       return null;
+//     }
+//     const removedNodeIndex = nodes.length - n;
+//     if (removedNodeIndex === 0) {
+//       return nodes[1];
+//     } else if (removedNodeIndex === nodes.length - 1) {
+//       nodes[nodes.length - 2].next = null;
+//     } else {
+//       nodes[removedNodeIndex - 1].next = nodes[removedNodeIndex + 1];
+//     }
+//     return nodes[0];
+//   };
 
 c(removeNthFromEnd(head, 2))
