@@ -16,6 +16,7 @@ let dfs = (image, sr, sc, color, newColor) => {
     if (sr < 0 || sc < 0 || sr >= image.length || sc >= image[0].length || image[sr][sc] != color) {
         return;
     }
+    // c(image);
     image[sr][sc] = newColor;
     dfs(image, sr - 1, sc, color, newColor)
     dfs(image, sr + 1, sc, color, newColor)
