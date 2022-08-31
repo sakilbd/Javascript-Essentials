@@ -68,3 +68,7 @@ let map = { "1": 2, "2": 3, "3": 4 };
 Object.keys(map).forEach((key, i) => {
     c(key) //returns 1,2,3
 })
+
+26. s.split(/[^A-Za-z]/).join(''); //filters alphabte only from sentence with punctuations numbers etc.
+//s="hi, I am sakil 22 ?342" returns 'hiIamsakil'
+27.s.toLowerCase(); //returns all alphabates to lowercase..
