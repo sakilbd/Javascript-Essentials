@@ -6,7 +6,7 @@ var isPalindrome = function(s) {
 
     let string = s.split(/[^A-Za-z0-9]/).join('').toLowerCase();
     // c(string.length)
-    c(string)
+    // c(string)
     if (string.length == 1) {
         return true;
     }
