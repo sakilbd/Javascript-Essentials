@@ -71,4 +71,4 @@ Object.keys(map).forEach((key, i) => {
 
 26. s.split(/[^A-Za-z]/).join(''); //filters alphabte only from sentence with punctuations numbers etc.
 //s="hi, I am sakil 22 ?342" returns 'hiIamsakil'
-27.s.toLowerCase(); //returns all alphabates to lowercase..
+27. s.toLowerCase(); //returns all alphabates to lowercase..
