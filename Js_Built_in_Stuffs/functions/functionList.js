@@ -72,3 +72,15 @@ Object.keys(map).forEach((key, i) => {
 26. s.split(/[^A-Za-z]/).join(''); //filters alphabte only from sentence with punctuations numbers etc.
 //s="hi, I am sakil 22 ?342" returns 'hiIamsakil'
 27. s.toLowerCase(); //returns all alphabates to lowercase..
+
+28.
+let arr = [1, 2, 3, 4, 4, 4, 4, 5, 5];
+const seen = new Set();
+const duplicates = arr.filter((n) => {
+    return seen.size == seen.add(n).size; //if returns true that measn that item (n) has duplicates 
+
+});
+console.log(duplicates); // [ 5 ]
+29.
+duplicates = [1, 1]
+let distinctDuplicates = [...new Set(duplicates)]; //returns 1;
