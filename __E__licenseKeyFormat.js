@@ -52,6 +52,24 @@ let lastCheck = (s, k) => {
     return finalString.split('').reverse().join('');
 };
 
+
+////simplieset 15 line solution fuck man :D 
+// var licenseKeyFormatting = function(s, k) {
+//     let sSplited = s.split("-");
+//     let finalString = "";
+//     let string = sSplited.join("").split(",").join(",");
+//     string = string.split('').reverse().join('');
+
+//     for (let i = 0; i < string.length; i = i + k) {
+//         if (finalString == "") {
+//             finalString += string.slice(i, i + k).toUpperCase();
+//         } else {
+//             finalString += "-" + string.slice(i, i + k).toUpperCase();
+//         }
+//     }
+//     return finalString.split('').reverse().join('');
+// };
+
 c(licenseKeyFormatting("5F3Z-2e-9-w", 4));
 
 c(licenseKeyFormatting("2-5g-3-Jd", 2));
