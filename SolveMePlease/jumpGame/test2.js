@@ -1,5 +1,7 @@
-const c = console.log.bind(console);
+// https://leetcode.com/problems/jump-game/
 
+const c = console.log.bind(console);
+//trying to solve the last test case..
 var canJump = function(nums) {
     if (nums.length == 1) {
         return true;

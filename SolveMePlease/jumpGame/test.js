@@ -1,5 +1,6 @@
+// https://leetcode.com/problems/jump-game/
 const c = console.log.bind(console);
-
+//done by me passed all test cases except two 
 var canJump = function(nums) {
     if (nums.length == 1) {
         return true;
