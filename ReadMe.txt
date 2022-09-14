@@ -7,3 +7,4 @@
 6.__E__ means easy problems ,__M__ / __H__ hard.
 8."$$$" has optimized time complexity solution on other languages ..need to implement
 9. "&&&" must revisit code community help almost 100%;
+10.'999' solved succesfully but got TLE. submited community code 
