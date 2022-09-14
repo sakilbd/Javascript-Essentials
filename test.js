@@ -1,24 +1,78 @@
-var isUgly = function(n) {
-    let checkArray = [2, 3, 5]
-    let factors = [];
-    if (n == 1) {
-        return true;
+// https://leetcode.com/problems/shifting-letters-ii/
 
-    }
-    for (let i = 2; i < n; i++) {
-        n % i == 0 ? factors.push(i) : '';
-    }
-    if (factors[0] == null) {
-        return false;
-    }
-    let result = true;
-    for (let i = 0; i < factors.length; i++) {
-        if (checkArray.includes(factors[i]) == false) {
-            result = false;
-            break;
+const c = console.log.bind(console);
 
-        };
 
+// gets TLE
+// var shiftingLetters = function(s, shifts) {
+//     let result = s;
+//     // return s.split('').slice(1, 2)
+//     for (let x of shifts) {
+//         result = shiftOneString(result, x).join('');
+//     }
+//     return result;
+// };
+
+// const shiftOneString = (s, shifts) => {
+//     // let loopLength = shifts[1] - shifts[0];
+//     let returnString = [];
+//     for (let x in s) {
+//         if (x >= shifts[0] && x <= shifts[1]) {
+//             if (shifts[2] == 0) {
+//                 let getCharCode = s[x].charCodeAt();
+//                 returnString.push(String.fromCharCode((getCharCode - 1) < 97 ? 122 : (getCharCode - 1)));
+//                 // c(getCharCode);
+//                 // c(s[x]);
+//             }
+//             if (shifts[2] == 1) {
+//                 let getCharCode = s[x].charCodeAt();
+//                 returnString.push(String.fromCharCode((getCharCode + 1) > 122 ? 97 : (getCharCode + 1)));
+//                 // c(getCharCode);
+//                 // c(s[x]);
+//             }
+//         } else {
+//             returnString.push(s[x])
+//         }
+//     }
+
+//     return returnString;
+// };
+
+var shiftingLetters = function(s, shifts) {
+    let result = s;
+    // return s.split('').slice(1, 2)
+    for (let x of shifts) {
+        result = shiftOneString(result, x).join('');
     }
     return result;
 };
+
+const shiftOneString = (s, shifts) => {
+    // let loopLength = shifts[1] - shifts[0];
+    let returnString = [];
+    for (let x in s) {
+        if (x >= shifts[0] && x <= shifts[1]) {
+            if (shifts[2] == 0) {
+                let getCharCode = s[x].charCodeAt();
+                returnString.push(String.fromCharCode((getCharCode - 1) < 97 ? 122 : (getCharCode - 1)));
+                // c(getCharCode);
+                // c(s[x]);
+            }
+            if (shifts[2] == 1) {
+                let getCharCode = s[x].charCodeAt();
+                returnString.push(String.fromCharCode((getCharCode + 1) > 122 ? 97 : (getCharCode + 1)));
+                // c(getCharCode);
+                // c(s[x]);
+            }
+        } else {
+            returnString.push(s[x])
+        }
+    }
+
+    return returnString;
+};
+
+
+c(shiftingLetters('dztz', [
+    [1, 2, 1]
+]))
