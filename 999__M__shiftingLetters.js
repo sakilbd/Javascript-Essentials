@@ -85,38 +85,38 @@ const shiftOneString = (s, shifts) => {
 
 
 //from community accepted with  minimum time colplexity
-var shiftingLetters = function(s, shifts) {
-    let chars = [];
-    let preSum = Array(s.length).fill(0);
-    for (let char of s) {
-        chars.push(char.charCodeAt(0));
-    }
-    for (let shift of shifts) {
-        if (shift[2] === 1) {
-            preSum[shift[0]] += 1;
-            preSum[shift[1] + 1] -= 1;
-        } else {
-            preSum[shift[0]] -= 1;
-            preSum[shift[1] + 1] += 1;
-        }
-    }
-    for (let i = 1; i < preSum.length; i++) {
-        preSum[i] += preSum[i - 1];
-    }
-    for (let i = 0; i < chars.length; i++) {
-        let update = chars[i] + preSum[i];
-        while (update > 122) {
-            update -= 26;
-        }
-        while (update < 97) {
-            update += 26;
-        }
-        chars[i] = update;
-    }
+// var shiftingLetters = function(s, shifts) {
+//     let chars = [];
+//     let preSum = Array(s.length).fill(0);
+//     for (let char of s) {
+//         chars.push(char.charCodeAt(0));
+//     }
+//     for (let shift of shifts) {
+//         if (shift[2] === 1) {
+//             preSum[shift[0]] += 1;
+//             preSum[shift[1] + 1] -= 1;
+//         } else {
+//             preSum[shift[0]] -= 1;
+//             preSum[shift[1] + 1] += 1;
+//         }
+//     }
+//     for (let i = 1; i < preSum.length; i++) {
+//         preSum[i] += preSum[i - 1];
+//     }
+//     for (let i = 0; i < chars.length; i++) {
+//         let update = chars[i] + preSum[i];
+//         while (update > 122) {
+//             update -= 26;
+//         }
+//         while (update < 97) {
+//             update += 26;
+//         }
+//         chars[i] = update;
+//     }
 
-    let res = String.fromCharCode(...chars);
-    return res;
-};
+//     let res = String.fromCharCode(...chars);
+//     return res;
+// };
 c(shiftingLetters("abc", [
     [0, 1, 0],
     [1, 2, 1],
