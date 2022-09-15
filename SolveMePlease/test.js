@@ -6,12 +6,13 @@ var isRectangleCover = function(rectangles) {
     rectangles.forEach((item, i) => {
         map[item.join("")] = generateRectanglePoints(item);
     });
+    return map;
     Object.keys(map).forEach((squre) => {
         c(map[squre].splice(-1));
 
         map[squre].forEach((plot) => {
-            c(plot);
-            c("squre :" + squre);
+            // c(plot);
+            // c("squre :" + squre);
             resizeMap(map, plot);
             // for (let i = 0; i < Object.keys(map).length; i++) {
             //     c(map[Object.keys(map)[i]]);
