@@ -39,18 +39,37 @@ const c = console.log.bind(console);
 var commonChars = function(words) {
     let res = [];
     let arrCopy = [...words];
+    let updateCheck = true;
+    // let q = arrCopy[0].replace('b', 'fuck');
+    // arrCopy[0] = q;
 
+    // return arrCopy;
     let insert = true;
     for (let i of words[0]) {
-        for (let j of words) {
-            if (j.includes(i) == false) {
-                insert = false;
-                break;
-            } else {
-                insert = true;
-            }
+        try {
+            arrCopy.filter((item, k) => {
+                if (!item.includes(i)) {
+                    updateCheck = false;
+                    throw k;
+                } else {
+                    updateCheck = true;
+                }
+                // if (i == item[j]) {
+                //     let replaceItem = item.replace(item[j], '');
+                //     arrCopy[k] = replaceItem;
+                // }
+            });
+        } catch (err) {
+            // c(err);
         }
-        if (insert == true) {
+        if (updateCheck) {
+            arrCopy.filter((item, k) => {
+                var re = new RegExp(i, '');
+                let replaceItem = item.replace(re, "");
+                // c(replaceItem)
+                arrCopy[k] = replaceItem;
+            });
+
             res.push(i);
         }
     }
@@ -60,4 +79,4 @@ var commonChars = function(words) {
 
 c(commonChars(["bella", "label", "roller"]));
 
-// c(commonChars(["cool", "lock", "cook"]));
+c(commonChars(["cool", "lock", "cook"]));
