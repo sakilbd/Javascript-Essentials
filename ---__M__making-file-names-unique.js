@@ -1,3 +1,4 @@
+// https://leetcode.com/problems/making-file-names-unique/
 const c = console.log.bind(console);
 
 var getFolderNames = function(names) {
@@ -19,26 +20,35 @@ var getFolderNames = function(names) {
         }
         // c(key);
     }
-    return names.map((item) => {
-        if (map.get(item) >= 2) {
+    let arr = [];
+    let secondItemFlag = false;
+    names.forEach((item) => {
+        if (map.get(item) >= 2 && secondItemFlag == true) {
             if (valueMap.has(item)) {
                 map.set(item, parseInt(map.get(item)) - 1);
                 let returnItem = item + `(${parseInt(valueMap.get(item)) + 1})`;
                 valueMap.set(item, parseInt(valueMap.get(item)) + 1);
-                return returnItem
+                arr.push(returnItem);
+                map.get(item) == 1 ? secondItemFlag = false : ''
             } else {
+
                 map.set(item, parseInt(map.get(item)) - 1);
-                let returnItem = item + `(${parseInt(valueMap.get(item)||0) + 1})`;
+                let returnItem = item + `(${parseInt(valueMap.get(item) || 0) + 1})`;
                 valueMap.set(item, parseInt(valueMap.get(item) || 0) + 1);
-                return returnItem
+                arr.push(returnItem);
             }
+        } else if (map.get(item) >= 2 && secondItemFlag == false) {
+            // c("shit");
+            secondItemFlag = true;
+            arr.push(item);
         } else {
-            return item;
+            arr.push(item);
         }
-    })
 
-    // return valueMap;
+    });
+
+    return arr;
 };
-c(getFolderNames(["gta", "gta(1)", 'gta', "avalon", ]));
+c(getFolderNames(["gta", "gta(1)", "gta", "avalon"]));
 
-c(getFolderNames(["wano", "wano", "wano", "wano"]));
+c(getFolderNames(["wano", "wano", "wano", "wano", "ab", "ab(1)", "ab"]));
