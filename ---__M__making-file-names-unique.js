@@ -49,6 +49,10 @@ var getFolderNames = function(names) {
 
     return arr;
 };
-c(getFolderNames(["gta", "gta(1)", "gta", "avalon"]));
+// c(getFolderNames(["gta", "gta(1)", "gta", "avalon"]));
 
-c(getFolderNames(["wano", "wano", "wano", "wano", "ab", "ab(1)", "ab"]));
+
+// c(getFolderNames(["wano", "wano", "wano", "wano", "ab", "ab(1)", "ab"]));
+
+
+c(getFolderNames(["kaido", "kaido(1)", "kaido", "kaido(1)"]));
