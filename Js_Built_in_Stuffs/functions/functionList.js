@@ -97,3 +97,7 @@ let distinctDuplicates = [...new Set(duplicates)]; //returns 1;
 30.
 let s = "abcdef1"
 s.substr(0, 2) //returns 0 to 2 index result which is "abc"
+31.
+//find sign
+Math.sign(-25) //returns -1
+Math.sign(24) //returns 1
