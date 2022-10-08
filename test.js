@@ -30,3 +30,12 @@ c(displayTable([
     ["Carla", "5", "Ceviche"],
     ["Rous", "3", "Ceviche"]
 ]));
+
+let map = () => {
+    let set = new Map();
+    set.set(3, { item: 1 })
+    set.get(3)['wow'] = 5;
+    return set;
+}
+
+c(map())
