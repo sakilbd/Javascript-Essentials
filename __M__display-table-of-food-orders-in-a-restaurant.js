@@ -55,6 +55,27 @@ var displayTable = function(orders) {
     // return map;
 };
 
+//simplified solutino from community 
+// var displayTable = function(orders) {
+//     let tables = new Set(), dishes = new Set()
+//     for (let [_, table, dish] of orders)
+//         tables.add(table), dishes.add(dish)
+//     tables = new Map([...tables].sort((a,b) => ~~a - ~~b).map((el,i) => [el,i]))
+//     dishes = new Map([...dishes].sort().map((el,i) => [el,i]))
+//     let res = Array.from({length: tables.size + 1}, _ => new Array(dishes.size + 1).fill("0"))
+//     res[0][0] = "Table"
+//     for (let [k,v] of dishes)
+//         res[0][v + 1] = k
+//     for (let [k,v] of tables)
+//         res[v + 1][0] = k
+//     for (let [_, table, dish] of orders) {
+//         let tv = tables.get(table) + 1,
+//             dv = dishes.get(dish) + 1
+//         res[tv][dv] = ~~res[tv][dv] + 1 + ""
+//     }
+//     return res
+// };
+
 c(
     displayTable([
         ["David", "3", "Ceviche"],
