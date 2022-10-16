@@ -101,3 +101,10 @@ s.substr(0, 2) //returns 0 to 2 index result which is "abc"
 //find sign
 Math.sign(-25) //returns -1
 Math.sign(24) //returns 1
+
+32. trimEnd(); // removes trailing spaces of a string
+
+let s = "   sakil    ";
+s.trimEnd(); /// returns "    sakil"
+
+33.

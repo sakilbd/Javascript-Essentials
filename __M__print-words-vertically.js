@@ -69,6 +69,17 @@ var printVertically = function(s) {
 
 };
 
+
+
+//from community damn short 
+
+// var printVertically = function(s) {
+//     const arr = s.split(' ')
+// const maxLength = Math.max(...arr.map(word => word.length))
+
+// return [...Array(maxLength)].map((_, i) => arr.map(word => word[i] || ' ').join('').trimEnd())
+// };
+
 // c(printVertically("HOW ARE YOU"))
 
 c(printVertically("TO BE OR NOT TO BE"));
