@@ -54,7 +54,7 @@ var maxProduct = function(words) {
         let cur = 0;
         // c(cur)
         for (let i = 0; i < str.length; i++) {
-            c(str[i], 1 << (str.charCodeAt(i) - 97))
+            // c(str[i], 1 << (str.charCodeAt(i) - 97))
             cur |= 1 << (str.charCodeAt(i) - 97);
         }
         // c(cur)
