@@ -24,7 +24,7 @@ var numOfPairs = function(nums, target) {
 
         });
     });
-    return map;
+    return map.size;
     // return count;
 };
 
