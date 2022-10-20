@@ -1,34 +1,34 @@
-// https://leetcode.com/problems/number-of-pairs-of-strings-with-concatenation-equal-to-target/
 const c = console.log.bind(console);
-
-var numOfPairs = function(nums, target) {
-    let count = 0;
-    let map = new Set();
-    nums.forEach((item1, j) => {
-        nums.forEach((item, i) => {
-            // if (j == 2) {
-            //     c(item)
-            // }
-            if (i != j) {
-                // c("I :" + i);
-                // c("J :" + j)
+var detectCapitalUse = function(word) {
+    if (word[0].toUpperCase() === word[0]) {
+        //checks if first alphabate is uppercase
+        let check = true;
+        for (let i = 1; i < word.length; i++) {
+            if (word[i].toUpperCase() != word[i]) {
+                check = true;
+            } else {
+                // return false;
             }
-
-            if (i != j) {
-                if (item1 + item == target) {
-                    map.add(i.toString() + (j).toString());
-                    count++;
-                    // c(item1 + item);
-                }
+        }
+        return check;
+        // return true;
+    } else {
+        let check = true
+        for (let i = 1; i < word.length; i++) {
+            if (word[i].toLowerCase() === word[i]) {
+                check = true
+            } else {
+                return false;
             }
+        }
+        return check;
+    }
+    return true;
 
-        });
-    });
-    return map.size;
-    // return count;
 };
 
-c(numOfPairs(["777", "7", "77", "77"], "7777"));
-
-c(numOfPairs(["123", "4", "12", "34"], "1234"))
-c(numOfPairs(["1", "1", "1"], "11"))
+c(detectCapitalUse("USA"));
+c(detectCapitalUse("FlaG"));
+c(detectCapitalUse("sdfJ"))
+c(detectCapitalUse("dlskfjsldf"))
+c(detectCapitalUse("Leetcode"))
