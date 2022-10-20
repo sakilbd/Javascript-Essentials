@@ -108,3 +108,5 @@ let s = "   sakil    ";
 s.trimEnd(); /// returns "    sakil"
 
 33.
+let digit = 12345;
+console.log(digit.match(/^[0-9]+$/) != null); // returns true for "12345" and false for "25e6"
