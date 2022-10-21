@@ -110,3 +110,12 @@ s.trimEnd(); /// returns "    sakil"
 33.
 let digit = 12345;
 console.log(digit.match(/^[0-9]+$/) != null); // returns true for "12345" and false for "25e6"
+34.
+let map = {}
+map.a = 2;
+map.b = 3;
+map.c = "wow";
+c(Object.values(map).includes(2)) //returns true as 2 is in value
+c(Object.keys(map).includes("a")) //returns true as "a" is in key list 
+c(Object.keys(map).includes("z")) //returns false 
+return map;
