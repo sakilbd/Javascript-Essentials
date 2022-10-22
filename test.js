@@ -1,3 +1,4 @@
+// https://leetcode.com/problems/smallest-string-with-a-given-numeric-value/
 const c = console.log.bind(console);
 
 
@@ -41,7 +42,7 @@ var getSmallestString = function(n, k) {
         let SlotLeft = n - possibleNumberOfA;
         let ValueLeft = k - possibleNumberOfA;
 
-        let newZcount = (ValueLeft / 26);
+        let newZcount = Math.floor((ValueLeft / 26));
 
         // return newZcount;
 
@@ -54,8 +55,30 @@ var getSmallestString = function(n, k) {
         let finalNeededValue = k - finalKCount
         let finalSlotLeft = n - (possibleNumberOfA + newZcount);
         // return finalSlotLeft;
-        let finalANeeded = possibleNumberOfA + (finalSlotLeft - 1)
-            // return finalNeededValue;
+
+        if (finalSlotLeft < 26) {
+            var finalANeeded = possibleNumberOfA + (finalSlotLeft - 1)
+        } else if (finalSlotLeft >= 26) {
+            let number = (finalSlotLeft / 26)
+            if (Number(number) === number && number % 1 !== 0) {
+                newZcount = newZcount - (Math.floor(number) + 1);
+
+
+
+                finalKCount = possibleNumberOfA + newZcount * 26;
+                // return newZcount
+                //need to work with this
+
+                finalNeededValue = k - finalKCount
+                finalSlotLeft = n - (possibleNumberOfA + newZcount);
+                var finalANeeded = possibleNumberOfA + (finalSlotLeft - 1)
+                    // return newZcount
+            }
+            // return number;
+        }
+
+
+        // return finalNeededValue;
 
         arr.push(Array(newZcount).fill('z').join('')); //z push 
         if (finalSlotLeft <= 1) {
@@ -95,8 +118,8 @@ var getSmallestString = function(n, k) {
 };
 
 // c(getSmallestString(5, 73))
-//     // c(getSmallestString(3, 27))
-//     // c(getSmallestString(100, 1200))
+// c(getSmallestString(3, 27))
+// c(getSmallestString(100, 1200))
 
 // c(getSmallestString(3, 27))
 
@@ -106,4 +129,8 @@ var getSmallestString = function(n, k) {
 
 // c(getSmallestString(80, 576))
 
-c(getSmallestString(23100, 567226))
+// c(getSmallestString(23100, 567226))
+
+//all above passed 
+
+c(getSmallestString(74657, 743771)) //failed
