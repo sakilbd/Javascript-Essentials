@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/partition-labels/
+
 const c = console.log.bind(console);
 
 var partitionLabels = function(s) {
