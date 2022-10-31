@@ -28,7 +28,7 @@ var numOfPairs = function(nums, target) {
     // return count;
 };
 
-c(numOfPairs(["777", "7", "77", "77"], "7777"));
+// c(numOfPairs(["777", "7", "77", "77"], "7777"));
 
 c(numOfPairs(["123", "4", "12", "34"], "1234"))
 c(numOfPairs(["1", "1", "1"], "11"))
