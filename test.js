@@ -13,8 +13,13 @@ var strWithout3a3b = function(a, b) {
                 a--;
             }
             if (b >= 2) {
-                res += Array(2).fill("b").join("");
-                b = b - 2;
+                if (a > 2) {
+                    res += "b";
+                    b--;
+                } else {
+                    res += Array(2).fill("b").join("");
+                    b = b - 2;
+                }
             } else if (b > 0) {
                 res += "b";
                 b--;
@@ -23,7 +28,6 @@ var strWithout3a3b = function(a, b) {
                 break;
             }
         } else {
-
             if (b >= 2) {
                 res += Array(2).fill("b").join("");
                 b = b - 2;
@@ -32,8 +36,13 @@ var strWithout3a3b = function(a, b) {
                 b--;
             }
             if (a >= 2) {
-                res += Array(2).fill("a").join("");
-                a = a - 2;
+                if (b > 2) {
+                    res += "a";
+                    a--;
+                } else {
+                    res += Array(2).fill("a").join("");
+                    a = a - 2;
+                }
             } else if (a > 0) {
                 res += "a";
                 a--;
@@ -46,4 +55,4 @@ var strWithout3a3b = function(a, b) {
     return res;
 };
 
-c(strWithout3a3b(4, 1));
+c(strWithout3a3b(2, 5));
