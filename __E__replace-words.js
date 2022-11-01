@@ -1,3 +1,4 @@
+// https://leetcode.com/problems/replace-words/
 const c = console.log.bind(console);
 
 var replaceWords = function(dictionary, sentence) {
