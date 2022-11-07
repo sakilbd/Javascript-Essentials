@@ -1,4 +1,4 @@
-// https://leetcode.com/submissions/detail/838623024/
+// https://leetcode.com/problems/decoded-string-at-index/
 const c = console.log.bind(console);
 
 var decodeAtIndex = function(s, k) {
@@ -18,9 +18,8 @@ var decodeAtIndex = function(s, k) {
             return res[k - 1]
 
         }
-
     }
-    return res[k - 1];
+    // return res.length;
 };
 
 // c(decodeAtIndex("leet2code3", 10));
