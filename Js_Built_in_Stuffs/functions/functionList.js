@@ -118,4 +118,8 @@ map.c = "wow";
 c(Object.values(map).includes(2)) //returns true as 2 is in value
 c(Object.keys(map).includes("a")) //returns true as "a" is in key list 
 c(Object.keys(map).includes("z")) //returns false 
-return map;
+    // return map;
+
+35.
+    [1, 2, 3].every((e, j, a) => a.indexOf(e) === j) //returns true as there is no duplicates 
+    [1, 2, 1].every((e, j, a) => a.indexOf(e) === j) //returns false as there are duplicates
