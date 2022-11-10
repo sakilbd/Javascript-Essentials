@@ -2,11 +2,22 @@
 const c = console.log.bind(console);
 
 var smallestSubsequence = function(s) {
+
     let arr = [];
     let res = "";
     for (let i = 0; i < s.length; i++) {
         let slice = s.slice(i, s.length);
         slice.split("").indexOf(s[i]) == slice.split("").lastIndexOf(s[i]) ? res += s[i] : '';
+        // if (slice.split("").indexOf(s[i]) == slice.split("").lastIndexOf(s[i])) {
+        //     res += s[i];
+        //     let reCheck = s.slice(0, i)
+
+        //     c("i :" + s[i])
+        //     c("res :" + res)
+        //     c("recheck :" + reCheck)
+        //         // c("wow")
+        // }
+
     }
     let index = 0;
     let slice = s.slice(s.indexOf(res[0]), s.length);
