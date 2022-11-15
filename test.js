@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/validate-stack-sequences/
+
 const c = console.log.bind(console);
 
 
@@ -11,8 +13,8 @@ var validateStackSequences = function(pushed, popped) {
     let pushedPopIndex = pushed.indexOf(poppedItem)
     let pushedLeft = pushed.slice(0, pushedPopIndex);
     let pushedRight = pushed.slice(pushedPopIndex + 1, pushed.length)
-
-    return "wow";
+    var pushed = [...pushedLeft, ...pushedRight]
+    return pushed;
 
     validateStackSequences(pushed, popped);
 
