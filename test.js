@@ -2,12 +2,21 @@ const c = console.log.bind(console);
 
 
 var validateStackSequences = function(pushed, popped) {
-
+    if (popped.length == 0) {
+        return "shit "
+    }
     let poppedItem = popped[0];
+    let updatedPopped = popped.slice(-popped.length + 1)
+        // return updatedPopped
     let pushedPopIndex = pushed.indexOf(poppedItem)
     let pushedLeft = pushed.slice(0, pushedPopIndex);
-    let pushedRight = pushed.slice(pushedPopIndex, pushed.length)
-    return pushedRight
+    let pushedRight = pushed.slice(pushedPopIndex + 1, pushed.length)
+
+    return "wow";
+
+    validateStackSequences(pushed, popped);
+
+
 
 
 };
