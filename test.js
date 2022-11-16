@@ -116,8 +116,8 @@ c(validateStackSequences([0, 2, 1], [0, 1, 2])); //t
 
 c(validateStackSequences([4, 0, 3, 1, 2], [4, 1, 3, 0, 2])); //t
 
-c(
-    validateStackSequences(
-        [3, 1, 2, 9, 5, 6, 8, 4, 7, 0], [2, 6, 4, 0, 7, 8, 5, 9, 1, 3]
-    )
-); //t
+// c(
+//     validateStackSequences(
+//         [3, 1, 2, 9, 5, 6, 8, 4, 7, 0], [2, 6, 4, 0, 7, 8, 5, 9, 1, 3]
+//     )
+// ); //t
