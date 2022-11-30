@@ -1,4 +1,4 @@
-// https://leetcode.com/submissions/detail/851629181/
+// https://leetcode.com/problems/wiggle-sort-ii/
 
 const c = console.log.bind(console);
 var wiggleSort = function(nums) {
