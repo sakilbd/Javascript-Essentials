@@ -14,22 +14,30 @@ var numberOfSubstrings = function(s) {
         // c("Y :" + y);
         while (y <= length) {
             if (y < length - 2) {
-
                 let slice = s.slice(x, y + 3);
-                c([...new Set(slice.split(''))])
+
+                // c(slice)
+                if ([...new Set(slice.split(""))].length == 3) {
+                    // count = count + ([...new Set(slice.split(""))].length == 3 ? 1 : 0);
+                    count += length - y + -2
+                        // c("length " + (length - y + -2))
+                        // c("y :" + y)
+                        // c(count)
+                    break;
+                }
 
             } else {
-                break
+                break;
             }
             y++;
             // c("Y :" + y);
-
         }
-
+        // c(x)
         x++;
     }
 
-
+    return count;
 };
 
 c(numberOfSubstrings("abcabcaa"));
+// c(numberOfSubstrings());
