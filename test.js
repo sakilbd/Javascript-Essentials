@@ -1,15 +1,10 @@
 const c = console.log.bind(console);
 
-var camelMatch = function(queries, pattern) {
-    let patternArray = [];
-    let tampStr = '';
-    for (let i = 0; i < pattern.length; i++) {
-        if (pattern[i].toUpperCase() === pattern[i]) {
+var compress = function(chars) {
+    chars.forEach(el => {
+        c(el)
 
-        }
-    }
-
+    });
 };
 
-
-c(camelMatch(["FooBar", "FooBarTest", "FootBall", "FrameBuffer", "ForceFeedBack"], "FooBar"))
+c(compress(["a", "a", "b", "b", "c", "c", "c"]))
