@@ -1,6 +1,9 @@
 // https://leetcode.com/problems/string-compression/
 const c = console.log.bind(console);
 
+
+
+//runtime 150+ ms 
 var compress = function(chars) {
     let curChar = chars[0];
     let count = 0;
@@ -54,6 +57,49 @@ var compress = function(chars) {
     return chars; // return should be commented in submission 
 };
 
+
+//form community below 80 ms 
+var compress = function(chars) {
+
+    if (chars.length == 1) {
+        return
+    }
+
+    let counter = 1;
+    let resultString = ""
+
+
+    for (let i = 0; i < chars.length - 1; i++) {
+        if (chars[i] == chars[i + 1]) {
+            counter++
+        } else {
+            resultString = resultString + chars[i]
+            if (counter > 1) {
+                resultString = resultString + counter.toString()
+            }
+            counter = 1
+        }
+    }
+
+    resultString = resultString + chars[chars.length - 1]
+    if (counter > 1) {
+        resultString = resultString + counter.toString()
+    }
+
+    // console.log(resultString, resultString[0])
+
+    for (let i = 0; i < chars.length; i++) {
+        if (resultString[i]) {
+            chars[i] = resultString[i]
+        } else {
+            chars.splice(i, chars.length - i)
+            break;
+        }
+
+    }
+
+    // return chars; // should be commented in submission 
+};
 c(compress(["a", "b", "b", "b", "b", "b", "b", "b", "b", "b", "b", "b", "b"]))
 c(compress(
     ["a"]));
