@@ -1,6 +1,7 @@
 const c = console.log.bind(console);
 
 var compress = function(chars) {
+
     let curChar = chars[0];
 
 
@@ -10,19 +11,23 @@ var compress = function(chars) {
     temp.forEach((el, i) => {
 
         if (el === curChar) {
+            chars.reverse().pop();
+            chars.reverse();
             count++;
             if (i == temp.length - 1) {
                 chars.push(curChar);
-                count > 1 ? chars.push(count) : "";
+                count > 1 ? chars.push(count.toString()) : "";
+
             }
             // c("if CurChar : " + curChar);
             // c("if i : " + i)
             // c("if count :" + count)
 
         } else {
-
+            chars.reverse().pop();
+            chars.reverse();
             chars.push(curChar);
-            count > 1 ? chars.push(count) : "";
+            count > 1 ? chars.push(count.toString()) : "";
             // c(curChar);
             // c(i)
             // c("count :" + count)
@@ -38,7 +43,7 @@ var compress = function(chars) {
 
     });
 
-    return chars.slice(temp.length, chars.length);
+    return chars
 };
 
-c(compress(["p", "a", "a", "b", "b", "c", "c"]));
+c(compress(["p", "a", "a", "b", "b", "c", "c", "c", "c", "c", "c", "c", "c", "c", "c", "c", "c", "c", "c", "c", "c", "c", "c", "c", "c", "c", "c"]));
