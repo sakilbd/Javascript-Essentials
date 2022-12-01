@@ -6,8 +6,7 @@ var compress = function(chars) {
 
     let count = 0;
     let temp = [...chars];
-    chars.length = 0;
-    let res = [];
+
     temp.forEach((el, i) => {
 
         if (el === curChar) {
@@ -39,7 +38,7 @@ var compress = function(chars) {
 
     });
 
-    return chars;
+    return chars.slice(temp.length, chars.length);
 };
 
 c(compress(["p", "a", "a", "b", "b", "c", "c"]));
