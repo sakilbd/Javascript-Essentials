@@ -1,3 +1,6 @@
+// https://leetcode.com/problems/determine-if-two-strings-are-close/
+
+
 const c = console.log.bind(console);
 
 var closeStrings = function(word1, word2) {
@@ -83,6 +86,25 @@ var closeStrings = function(word1, word2) {
 
     return true;
 };
+
+
+
+var closeStrings = function(A, B) {
+    let len = A.length
+    if (len !== B.length) return false
+    let fmA = new Uint32Array(26),
+        fmB = new Uint32Array(26)
+    for (let i = 0; i < len; i++)
+        fmA[A.charCodeAt(i) - 97]++, fmB[B.charCodeAt(i) - 97]++
+        for (let i = 0; i < 26; i++)
+            if (!!fmA[i] != !!fmB[i]) return false
+    fmA.sort()
+    fmB.sort()
+    for (let i = 0; i < 26; i++)
+        if (fmA[i] !== fmB[i]) return false
+    return true
+};
+
 
 c(closeStrings("cabbba", "abbeee"));
 c(closeStrings("cabbba", "aabbss"));
