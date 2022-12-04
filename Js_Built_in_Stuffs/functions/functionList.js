@@ -123,3 +123,12 @@ c(Object.keys(map).includes("z")) //returns false
 35.
     [1, 2, 3].every((e, j, a) => a.indexOf(e) === j) //returns true as there is no duplicates 
     [1, 2, 1].every((e, j, a) => a.indexOf(e) === j) //returns false as there are duplicates
+
+36.
+let fmA = new Array(26).fill(0),
+    fmB = new Array(26).fill(0)
+
+both are same ^ v
+
+let fmA = new Uint32Array(26),
+    fmB = new Uint32Array(26)
