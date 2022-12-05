@@ -68,7 +68,7 @@ var reorderLogFiles = function(logs) {
             let bSlice = b.split(" ").slice(1, b.length);
             let minLength = Math.min(aSlice.length, bSlice.length)
             if (aSlice[minLength - 1].length < bSlice[minLength - 1].length) {
-                c("wow");
+                // c("wow");
                 // c(__break);
                 return aSlice[minLength - 1].length - bSlice[minLength - 1].length;
             } else if (aSlice.length < bSlice.length) {
