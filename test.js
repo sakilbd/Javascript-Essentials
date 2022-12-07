@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/reorder-data-in-log-files/
+// https://leetcode.com/problems/long-pressed-name/
 
 const c = console.log.bind(console);
 
