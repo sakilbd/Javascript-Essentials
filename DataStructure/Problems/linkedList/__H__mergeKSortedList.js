@@ -18,7 +18,7 @@ let headNode = {
         },
     },
 };
-
+[1, 2, 3, 2, 21]
 
 let oneElement = {
     val: 1,
