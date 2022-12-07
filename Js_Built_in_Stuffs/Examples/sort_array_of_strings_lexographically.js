@@ -1,5 +1,5 @@
 const p = console.log.bind(console)
-let letterLogs = ["2 abc", '1 abc', '0 xyz abc']
+let letterLogs = ["2 abc abx", '1 abc aby', '0 xyz abc']
 
 let a = "abc xyz"
 
@@ -8,8 +8,8 @@ p(letterLogs.sort((a, b) => {
     const bBody = b.slice(b.indexOf(' ') + 1);
     const c = aBody.localeCompare(bBody);
 
-    if (c) {
-        p("cosco")
+    if (c) { //goes inside if c>0 or c<0
+        // p("cosco")
         return c;
     }
     return a.localeCompare(b);

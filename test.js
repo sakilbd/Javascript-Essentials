@@ -1,7 +1,10 @@
 // https://leetcode.com/problems/reorder-data-in-log-files/
 
 const c = console.log.bind(console);
+let a = "abc"
+let b = "abc"
 
+c(a.localeCompare(b));
 var reorderLogFiles = function(logs) {
     // return Math.min(9, 3)
     // return logs[0].charCodeAt(0);

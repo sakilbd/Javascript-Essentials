@@ -132,3 +132,16 @@ both are same ^ v
 
 let fmA = new Uint32Array(26),
     fmB = new Uint32Array(26)
+
+
+37.
+let a = "abc"
+let b = "abd"
+
+a.localeCompare(b) // returns -1(which means "abc" lexographically small than "abd")
+b.localeCompare(a) //returns 1(which means "abc" lexographically small than "abd")
+    // (which also meanss "abd" lexographciall larger than "abc")
+
+let a = "abc"
+let b = "abc"
+a.localeCompare(b) //returns 0 as both are equal
