@@ -71,5 +71,5 @@ var canTransform = function(start, end) {
 
 
 c(canTransform("RXXLRXRXL", "XRLXXRRLX"))
-
 c(canTransform("LXXLXRLXXL", "XLLXRXLXLX"))
+c(canTransform("XXXXXLXXXX", "LXXXXXXXXX"))
