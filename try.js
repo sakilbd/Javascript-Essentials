@@ -1,75 +1,110 @@
+// https://leetcode.com/problems/queue-reconstruction-by-height/
 const c = console.log.bind(console);
 
-
-// const s = "abcdxyz"
-
-// c(s.search("yx"))
-
-var canTransform = function(start, end) {
-    let length = start.length;
-    for (let i = 0; i < length; i++) {
-        let slice = start.slice(i, i + 2)
-
-        let check = 0
-        switch (slice) {
-            case "RX":
-                if (end.slice(i, i + 2) == "RX" || end.slice(i, i + 2) == "XR") {
-                    i++;
-                    check = 1;
-
-                    // continue
-                } else {
-
-                }
-                break;
-            case "XR":
-                if (end.slice(i, i + 2) == "XR") {
-                    i++;
-                    check = 1;
-                    // continue
-                } else {
-
-                }
-
-                break;
-            case "XL":
-                if (end.slice(i, i + 2) == "LX" || end.slice(i, i + 2) == "XL") {
-                    i++;
-                    check = 1;
-                    // continue
-                } else {
-
-                }
-
-                break;
-            case "LX":
-                if (end.slice(i, i + 2) == "LX") {
-                    i++;
-                    check = 1;
-                    // continue
-                } else {
-
-                }
-
-                break;
-            default:
-                // c(slice);
-
+var reconstructQueue = function(people) {
+    people.sort((a, b) => {
+        if (a[1] === b[1]) {
+            return a[0] - b[0]
+        } else {
+            return a[1] - b[1]
         }
-        if (check != 1) {
-            // c(check)
-            // c(start[i], i)
-            // c(end[i], i)
-            if (start[i] != end[i]) {
-                return false
+    });
+    // return people;
+    let temp = people
+    let i = 1;
+    let count = 0;
+    while (i < people.length) {
+        // if (temp[i][1] != 0) {
+        let checkArr = temp.slice(0, i);
+        // c(checkArr);
+        for (let j in checkArr) {
+            checkArr[j][0] >= temp[i][0] ? count++ : '';
+
+            if (count > temp[i][1]) {
+                // c(j)
+                // c("count " + count)
+                // c("temp[i][0] :" + temp[i][0])
+                // c(temp[j])
+                // c(temp.slice(j - 1, j))
+                let tempI = temp[i];
+                let tempSlice = temp.slice(j, temp.length);
+                temp[i] = temp[j]
+                let leftTempslice = temp.slice(0, j)
+                    // temp[j] = tempI;
+                temp = [...leftTempslice, ...tempSlice]
+                c(temp)
+                i = 0
+                break;
             }
+            break;
+            // if ((count == temp[i][1]) && (j == checkArr.length - 1)) {
+            //     // c(j)
+            //     // c("count " + count)
+            //     // c("temp[i][0] :" + temp[i][0])
+            //     // c(temp[j])
+            //     // c(temp.slice(j - 1, j))
+            //     let tempI = temp[i];
 
+            //     temp[i] = temp[j]
+            //     temp[j] = tempI;
+            //     // i = 0
+            //     // break;
+            // }
+            // c(checkArr);
         }
+        count = 0;
+        // c(i)
+        // }
+        i++;
     }
-    return true;
+
+    return temp
+
 };
 
 
-c(canTransform("RXXLRXRXL", "XRLXXRRLX"))
-c(canTransform("LXXLXRLXXL", "XLLXRXLXLX"))
-c(canTransform("XXXXXLXXXX", "LXXXXXXXXX"))
+
+c(reconstructQueue([
+    [6, 0],
+    [5, 0],
+    [4, 0],
+    [3, 2],
+    [2, 2],
+    [1, 4]
+]))
+
+c(reconstructQueue([
+    [7, 0],
+    [4, 4],
+    [7, 1],
+    [5, 0],
+    [6, 1],
+    [5, 2]
+]))
+
+
+c(reconstructQueue([
+    [2, 4],
+    [3, 4],
+    [9, 0],
+    [0, 6],
+    [7, 1],
+    [6, 0],
+    [7, 3],
+    [2, 5],
+    [1, 1],
+    [8, 0]
+]));
+
+c(reconstructQueue([
+    [8, 2],
+    [4, 2],
+    [4, 5],
+    [2, 0],
+    [7, 2],
+    [1, 4],
+    [9, 1],
+    [3, 1],
+    [9, 0],
+    [1, 0]
+]))
