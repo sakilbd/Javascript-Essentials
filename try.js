@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/queue-reconstruction-by-height/
 const c = console.log.bind(console);
-
+console.log("someting");
 
 //updated infinite loop 
 var reconstructQueue = function(people) {
