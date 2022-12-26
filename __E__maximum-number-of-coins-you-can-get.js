@@ -12,6 +12,9 @@ var maxCoins = function(piles) {
     let j = 0;
     // c(piles)
     // c(leftArray)
+
+
+    // this loop created so that there must return the optimize one 
     for (let i = 0; i < leftArray.length; i++) {
         if ((i + 1) % 2 == 0) {
             modifiedArr.push(leftArray[i]);
@@ -26,6 +29,8 @@ var maxCoins = function(piles) {
     let i = 1;
     let res = 0;
     // c(piles);
+
+    // only this loop doesnot return the optimize values
     while (modifiedArr[i]) {
         res += modifiedArr[i];
         i += 3;
