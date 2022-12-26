@@ -12,4 +12,4 @@ var findMinDifference = function(timePoints) {
 };
 
 c(findMinDifference(["00:00", "23:59", "00:00"]))
-c(findMinDifference(["23:59", "24:00"]));
+    // c(findMinDifference(["23:59", "24:00"]));
