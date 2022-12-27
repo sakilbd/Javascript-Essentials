@@ -2,6 +2,8 @@
 
 const c = console.log.bind(console);
 
+
+//by me takes around 1500 ms
 var invalidTransactions = function(transactions) {
     let res = [];
     transactions.forEach((item) => {
@@ -12,7 +14,7 @@ var invalidTransactions = function(transactions) {
         if (rootAmount > 1000) {
             res.push(item);
         } else {
-            let arr = transactions.filter((item) => item.split(",")[0] == name);
+            let arr = transactions.filter((item) => item.split(",")[0] == name); /// takes the most time solution in community solution 
             let rootTime = item.split(",")[1];
             let rootCity = item.split(",")[3];
             c(arr);
@@ -36,6 +38,32 @@ var invalidTransactions = function(transactions) {
 
     return res;
 };
+
+//from community takes 97ms
+var invalidTransactions = function(transactions) {
+    const map = {};
+    const results = [];
+    for (const transaction of transactions) {
+        const [name, time, _, city] = transaction.split(',');
+        map[name] || = []; // need to RND about what is this man 
+        map[name].push([time, city]);
+    }
+    for (const transaction of transactions) {
+        const [name, time, amount, city] = transaction.split(',');
+        if (amount > 1000) {
+            results.push(transaction);
+        } else {
+            for (const [transactionTime, transactionCity] of map[name]) {
+                if (city !== transactionCity && Math.abs(time - transactionTime) <= 60) {
+                    results.push(transaction);
+                    break;
+                }
+            }
+        }
+    }
+    return results;
+};
+
 
 // c(invalidTransactions(["alice,20,800,mtv", "alice,50,1200,beijing"]));
 
