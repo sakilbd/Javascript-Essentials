@@ -145,3 +145,9 @@ b.localeCompare(a) //returns 1(which means "abc" lexographically small than "abd
 let a = "abc"
 let b = "abc"
 a.localeCompare(b) //returns 0 as both are equal
+
+38.
+var myArr = [...new Array(5)].map((_, i) => {
+    i++
+    return i
+}); // creates array like [1,2,3,4,5]
