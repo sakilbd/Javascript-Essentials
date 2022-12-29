@@ -10,14 +10,34 @@ var deleteAndEarn = function(nums) {
     // return temp
     // temp = temp.filter(item => item != 3 - 1 && item != 3 + 1)
     // return temp
-    set.forEach((item) => {
 
+    set.forEach((item) => {
+        let value = item;
         while (temp.length != 0) {
-            let index = temp.indexOf(item);
-            tempPoint += item;
-            temp.splice(index, 1);
-            temp = temp.filter(elem => elem != item - 1 && elem != item + 1)
-            c(temp);
+            let index = temp.indexOf(value);
+            // c(index)
+            if (index) {
+                tempPoint += value;
+
+                temp.splice(index, 1);
+                temp = temp.filter(elem => elem != value - 1 && elem != value + 1)
+
+                c(temp)
+
+            } else {
+                value = temp[0];
+                tempPoint += value;
+                temp = temp.filter(elem => elem != value - 1 && elem != value + 1)
+                temp.splice(0, 1);
+                // c(temp)
+
+                // c(value)
+                // c(temp)
+                // break;
+            }
+
+            // c(temp);
+            // c(tempPoint)
 
 
         }
