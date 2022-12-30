@@ -19,7 +19,7 @@ var deleteAndEarn = function(nums) {
     // let index = temp.indexOf(3);
     // return index;
     set.forEach((item) => {
-        let value = item;
+        var value = item;
         while (temp.length != 0) {
             let index = temp.indexOf(value);
 
@@ -28,36 +28,28 @@ var deleteAndEarn = function(nums) {
                 tempPoint += value;
 
                 temp.splice(index, 1);
-                let point = temp.filter(elem => elem == value);
-                point.forEach(item => {
-                    tempPoint += item;
-                })
+                temp = temp.filter((elem) => elem != value - 1 && elem != value + 1);
+                c("valueIF :" + value)
+                c(temp);
 
-                temp = temp.filter((elem) => elem != value - 1 && elem != value + 1 && elem != value);
-
-                // c(temp);
             } else {
                 value = temp[0];
                 tempPoint += value;
-
-                temp.splice(index, 1);
-                let point = temp.filter(elem => elem == value);
-                point.forEach(item => {
-                    tempPoint += item;
-                })
-
-                temp = temp.filter((elem) => elem != value - 1 && elem != value + 1 && elem != value);
-
-                // c(temp)
+                temp.splice(0, 1);
+                temp = temp.filter((elem) => elem != value - 1 && elem != value + 1);
+                c("elese")
+                c("value :" + value)
+                c(temp)
 
                 // c(value)
-                // c(temp)
+                // c(temp);
                 // break;
             }
 
             // c(temp);
             // c(tempPoint)
         }
+        c("###############################")
         temp = [...nums];
         // c(temp)
         points.push(tempPoint);
@@ -66,12 +58,11 @@ var deleteAndEarn = function(nums) {
     return points
     return Math.max(...points);
 };
-
 // c(deleteAndEarn([3, 4, 2]));
 
 // c(deleteAndEarn([2, 2, 3, 3, 3, 4]))
 
-// c(deleteAndEarn([3, 7, 10, 5, 2, 4, 8, 9, 9, 4, 9, 2, 6, 4, 6, 5, 4, 7, 6, 10]))
+c(deleteAndEarn([3, 7, 10, 5, 2, 4, 8, 9, 9, 4, 9, 2, 6, 4, 6, 5, 4, 7, 6, 10]))
 
 
-c(deleteAndEarn([8, 7, 3, 8, 1, 4, 10, 10, 10, 2]))
+// c(deleteAndEarn([8, 7, 3, 8, 1, 4, 10, 10, 10, 2]))
