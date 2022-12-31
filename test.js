@@ -34,9 +34,9 @@ var deleteAndEarn = function(nums) {
 
             } else {
                 value = temp[0];
-                tempPoint += value;
-                temp.splice(0, 1);
-                temp = temp.filter((elem) => elem != value - 1 && elem != value + 1);
+                // tempPoint += value;
+                // temp.splice(0, 1);
+                // temp = temp.filter((elem) => elem != value - 1 && elem != value + 1);
                 c("elese")
                 c("value :" + value)
                 c(temp)
