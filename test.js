@@ -1,6 +1,8 @@
 // https://leetcode.com/problems/reverse-substrings-between-each-pair-of-parentheses/description/
 const c = console.log.bind(console);
 
+
+/// by me without using stack 
 var reverseParentheses = function(s) {
     let _try = s.split("()");
     while (_try.length > 1) {
@@ -33,6 +35,27 @@ var reverseParentheses = function(s) {
     }
     return temp;
     // return (temp.slice(1, temp.length - 1)).split('').reverse().join('')
+};
+
+//from community using stack 
+var reverseParentheses = function(s) {
+    let stack = []
+    for (let i = 0; i < s.length; i++) {
+        if (s[i] !== ')') {
+            stack.push(s[i])
+        }
+        if (s[i] === ')') {
+            let string = ''
+            while (stack[stack.length - 1] !== '(') {
+                let char = stack.pop()
+                string = char + string
+            }
+            stack.pop()
+            const reversedString = string.split('').reverse().join('')
+            stack.push(reversedString)
+        }
+    }
+    return stack.join('')
 };
 
 c(reverseParentheses("(ed(et(oc))el)"));
