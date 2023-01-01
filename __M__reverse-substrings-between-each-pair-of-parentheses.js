@@ -37,7 +37,7 @@ var reverseParentheses = function(s) {
     // return (temp.slice(1, temp.length - 1)).split('').reverse().join('')
 };
 
-//from community using stack 
+//from community using stackk
 var reverseParentheses = function(s) {
     let stack = []
     for (let i = 0; i < s.length; i++) {
