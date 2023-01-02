@@ -1,3 +1,4 @@
+// https: //leetcode.com/problems/online-stock-span/description/
 const c = console.log.bind(console);
 
 var StockSpanner = function() {
@@ -11,24 +12,26 @@ var StockSpanner = function() {
 StockSpanner.prototype.next = function(price) {
     this.arr.push(price);
     let array = this.arr;
-    let idx = -1;
-    let length =
-        array.reverse().filter((item, i) => {
-            // c("item :" + item)
-            if (item <= price) {
-                if (idx == i - 1) {
-                    idx = i;
-
-                    return 1;
-                }
-
-                // idx = i;
-                // return 1
-
+    let idx = array.length;
+    let count = 0;
+    for (let i = array.length - 1; i >= 0; i--) {
+        // c("item :" + array[i])
+        if (array[i] <= price) {
+            if (idx == i + 1) {
+                idx = i;
+                count++;
+                // return 1;
+            } else {
+                break;
             }
-        }).length
-    array.reverse();
-    return length;
+
+            // idx = i;
+            // return 1
+        }
+    }
+
+    // array.reverse();
+    return count;
     return this.arr;
 };
 
