@@ -151,3 +151,28 @@ var myArr = [...new Array(5)].map((_, i) => {
     i++
     return i
 }); // creates array like [1,2,3,4,5]
+
+39.
+a.
+    //highest execution time
+let = unshuffled = [1, 2, 3]
+let shuffled = unshuffled
+    .map((value) => ({ value, sort: Math.random() }))
+    .sort((a, b) => a.sort - b.sort)
+    .map(({ value }) => value);
+
+
+return shuffled; // returns random combination of array like [3,1,2] and the shuffled functions are self explanatory
+b.
+    //medium execution time
+this.nums.sort((a, b) => {
+    if (Math.random() > 0.5) return 1;
+    else return -1;
+}); // antoher way to shuffle
+c.
+    //lowers execution time 
+let result = [...this.nums];
+for (let i = result.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    [result[i], result[j]] = [result[j], result[i]];
+}
