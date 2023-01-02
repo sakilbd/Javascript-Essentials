@@ -1,5 +1,9 @@
+// https://leetcode.com/problems/simplify-path/
+
 const c = console.log.bind(console);
 
+
+// almost done needs some tweaks 
 var simplifyPath = function(path) {
     let length = 0;
     let stack = [];
