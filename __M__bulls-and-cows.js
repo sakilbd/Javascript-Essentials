@@ -1,4 +1,5 @@
-const c = console.log.bind(console);
+https: //leetcode.com/problems/bulls-and-cows/description/
+    const c = console.log.bind(console);
 
 var getHint = function(secret, guess) {
     let map = new Map();
@@ -6,29 +7,26 @@ var getHint = function(secret, guess) {
     let cowCount = 0;
     secret.split("").forEach((item, i) => {
         map.has(item) ?
-            map.get(item).index.push(i) && map.get(item).count++
-            :
-            map.set(item, { index: [i], count: 1 });
+            map.set(item, map.get(item) + 1) :
+            map.set(item, 1);
     });
-    // return map
     let guessSplit = guess.split('')
     guessSplit.forEach((item, i) => {
         if (
             map.has(item) &&
-            map.get(item).index.includes(i) &&
-            map.get(item).count > 0
+
+            secret[i] == item
         ) {
             bullCount++;
-            map.get(item).count--;
-            guessSplit[i] = ""
-
+            map.set(item, map.get(item) - 1);
+            guessSplit[i] = "X" //replace the countable index with X to not count those values in cow count loop 
         }
 
     });
     guessSplit.forEach((item, i) => {
-        if (map.has(item) && map.get(item).count > 0) {
+        if (map.has(item) && map.get(item) > 0) {
             cowCount++;
-            map.get(item).count--;
+            map.set(item, map.get(item) - 1);
         }
     });
     return `${bullCount}A${cowCount}B`;
@@ -63,6 +61,6 @@ var getHint = function(secret, guess) {
 
 //     return `${bulls}A${cows - bulls}B`;
 // };
-// c(getHint("1807", "7810"));
-// c(getHint("1123", "0111"));
-c(getHint("1322", "1222"))
+c(getHint("1807", "7810"));
+c(getHint("1123", "0111"));
+c(getHint("1122", "1222"))
