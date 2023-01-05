@@ -45,7 +45,7 @@ var findMinArrowShots = function(points) {
 
 
 
-// by community around 400ms which is around least 
+// by community around 400ms which is around least //
 var findMinArrowShots = function(points) {
     let arrows = points.length // maximum amount of arrows
     if (!arrows) return 0
