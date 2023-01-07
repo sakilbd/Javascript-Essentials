@@ -12,7 +12,7 @@ var canCompleteCircuit = function(gas, cost) {
         if (costNeeded > totalGas) {
             totalGas = gas[i];
             costNeeded = cost[i];
-            index++;
+            index = i;
             // c('index :'+index)
             // c("i :" + i)
             // c("tGas :" + totalGas)
