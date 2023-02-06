@@ -176,3 +176,10 @@ for (let i = result.length - 1; i > 0; i--) {
     let j = Math.floor(Math.random() * (i + 1));
     [result[i], result[j]] = [result[j], result[i]];
 }
+
+
+
+40.
+let a = [1, 2, 3, 4]
+
+a.map(String) // conversts array of int's to array of strings
