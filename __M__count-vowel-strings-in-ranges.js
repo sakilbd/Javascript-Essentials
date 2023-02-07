@@ -83,7 +83,7 @@ var vowelStrings = function(words, queries) {
     let result = [];
     for (let [l, r] of queries) {
         let left = (l > 0) ? vs[l - 1] : 0;
-        result.push(vs[r] - left);
+        result.push(vs[r] - left); // makes sense retuns [a,b] range count by subtracting [0,a-1]index total count values 
     }
 
     return result;
