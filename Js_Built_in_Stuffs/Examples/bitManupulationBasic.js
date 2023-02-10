@@ -4,7 +4,7 @@ var hasAllCodes = function(s, k) {
     let st = new Set();
     for (let q = 0; q <= s.length - k; q++) {
         st.add(s.substring(q, q + k)) //creats binary substirng of length k
-        c(s.substring(q, q + k))
+
         if (st.size == (1 << k)) return true // means generated substirng covers the binary value of 0 to k 
     }
     return false
