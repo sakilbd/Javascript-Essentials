@@ -72,6 +72,7 @@ const c = console.log.bind(console);
 // c(calculate("0*0"));
 
 const calculate = (s) => {
+    // return eval(s)
     if (s == 0) {
         return 0;
     }
@@ -80,25 +81,68 @@ const calculate = (s) => {
     let symbols = []
     const length = s.length;
     let num = "";
-    for (let i = length - 1; i >= 0; i--) {
+    const plainStringCalculate = (arr) => {
+        let val = 0;
+        let symbol = "";
+        arr.every((a) => {
+            if (a === '+') {
+                symbol = '+'
+                return true
+            } else if (a === "-") {
+                symbol = '-'
+                return true;
+            } else {
+                if (symbol == '+') {
+                    val = parseInt(val) + parseInt(a)
+                } else if (symbol == '-') {
+
+                    val = parseInt(val) - parseInt(a)
+
+
+                } else {
+                    val = parseInt(a);
+                }
+
+                return true
+            }
+
+        })
+        return val;
+    }
+    let nonSyombleStringCheck = s.split('').some(a => {
+
+        return a == "("
+    })
+
+
+
+    // if (!nonSyombleStringCheck) {
+    //     let arr = s.split('').filter(item => {
+    //         return item != " "
+    //     });
+    //     return plainStringCalculate(arr)
+    // }
+
+    // for (let i = length - 1; i >= 0; i--) {
+    for (let i = 0; i < length; i++) {
         if (s[i] == "0") {
             num += 0;
-            i == 0 ? numStack.push(parseInt(num.split("").reverse().join(""))) : "";
+            i == 0 ? numStack.push(parseInt(num.split("").join(""))) : "";
         } else {
             if (parseInt(s[i])) {
                 num += s[i];
-                i == 0 ? numStack.push(parseInt(num.split("").reverse().join(""))) : "";
+                i == 0 ? numStack.push(parseInt(num.split("").join(""))) : "";
             } else {
                 if (s[i] != " ") {
                     if (num.length > 0) {
-                        numStack.push(parseInt(num.split("").reverse().join("")));
+                        numStack.push(parseInt(num.split("").join("")));
                         num = "";
                     }
 
                     numStack.push(parseInt(s[i]) ? parseInt(s[i]) : (s[i]));
                 } else if (s[i] == " ") {
                     if (num.length > 0) {
-                        numStack.push(parseInt(num.split("").reverse().join("")));
+                        numStack.push(parseInt(num.split("").join("")));
                         num = "";
                     }
                 }
@@ -122,63 +166,52 @@ const calculate = (s) => {
     // return numStack
 
 
+
+    return numStack
+        // return plainStringCalculate(numStack)
+    if (!nonSyombleStringCheck) {
+        return plainStringCalculate(numStack)
+    }
+
+    // return numStack;
     let i = 0;
     let numStackLength = numStack.length;
 
-    let calculatableString = ''
+    let calculatableString = [];
+
+    let res = []
     while (i < numStackLength) {
         let popped = numStack.pop();
 
-        if (popped === ")") {
+        if (popped === "(") {
             while (true) {
                 let secondPopped = secondStack.pop()
-                if (secondPopped == "(") {
+                if (secondPopped == ")") {
+                    secondStack.push(plainStringCalculate(calculatableString))
 
+                    // c(calculatableString)
+                    // c(plainStringCalculate(calculatableString))
+
+                    calculatableString = []
+
+                    break;
+                } else {
+                    calculatableString.push(secondPopped)
                 }
-                calculatableString += secondPopped;
+
             }
 
-
-        } else if (popped === "/") {
 
         } else {
             secondStack.push(popped);
         }
+
         i++;
     }
-
-
-
-
-
-    const plainStringCalculate = (arr) => {
-        let val = '';
-        let symbol = "";
-        arr.every((a) => {
-            if (a === '+') {
-                symbol = '+'
-                return true
-            } else if (a === "-") {
-                symbol = '-'
-                return true;
-            } else {
-                if (symbol == '+') {
-                    val = val + a
-                } else if (symbol == '-') {
-                    val = val - a
-                } else {
-                    val = a;
-                }
-
-                return true
-            }
-
-        })
-        return val;
-    }
-
-
-    return val;
+    return plainStringCalculate(secondStack)
+    return secondStack;
+    // return secondStack
+    // return val;
 
 
 
@@ -190,5 +223,10 @@ const calculate = (s) => {
     return numStack;
 };
 
-c(calculate("(1+(4+5+2)-3)+(6+8)"));
-c(calculate(" 2-1 + 21 "));
+// c(calculate("(1+(2-1+2)-3)+(6+80)"));
+// c(calculate(" 2-1 + 21 "));
+
+
+// c(calculate(" 2-1 + 2 "))
+
+c(calculate("1 + 1"))

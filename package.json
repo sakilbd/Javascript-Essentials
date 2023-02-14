@@ -2,7 +2,7 @@
 
     "type": "module",
     "scripts": {
-        "start": "node test.js"
+        "start": "node try3.js"
 
     }
 
