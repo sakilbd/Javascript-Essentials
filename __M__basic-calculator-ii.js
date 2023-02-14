@@ -65,7 +65,7 @@ var calculate = function(s) {
 // c(parseInt(q.split('').reverse().join('')))
 
 c(calculate("5+2*3"));
-c(calculate(" 3/2 "));
+// c(calculate(" 3/2 "));
 c(calculate(" 3+5 / 2 "));
 c(calculate("3+2*2"));
 
