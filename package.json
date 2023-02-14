@@ -3,7 +3,5 @@
     "type": "module",
     "scripts": {
         "start": "node try3.js"
-
     }
-
 }
