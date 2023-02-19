@@ -1,52 +1,85 @@
 // https://leetcode.com/problems/design-underground-system/
 
 const c = console.log.bind(console);
+
+
+// solved by me but with 2419ms runtime
 var UndergroundSystem = function() {
-    trips = {};
+    this.info = {};
+    this.timeMap = {};
+    this.stationIndex = {};
 };
 
-/** 
- * @param {number} id 
- * @param {string} stationName 
+/**
+ * @param {number} id
+ * @param {string} stationName
  * @param {number} t
  * @return {void}
  */
 UndergroundSystem.prototype.checkIn = function(id, stationName, t) {
-    trips[id] = { stationName, t };
+    if (this.stationIndex[stationName]) {} else {
+        let arr = Object.values(this.stationIndex);
+        let max = Math.max(...arr);
+        this.stationIndex[stationName] = max ? max + 1 : 1;
+    }
+    this.info[id] = {
+        startStName: stationName,
+        endStName: "",
+        inTIme: t,
+        outTime: "",
+    };
 };
 
-/** 
- * @param {number} id 
- * @param {string} stationName 
+/**
+ * @param {number} id
+ * @param {string} stationName
  * @param {number} t
  * @return {void}
  */
 UndergroundSystem.prototype.checkOut = function(id, stationName, t) {
-    const fromTo = `${trips[id].stationName}-${stationName}`;
-    const diff = t - trips[id].t;
-    if (trips[fromTo]) {
-        trips[fromTo].sum += diff;
-        trips[fromTo].length++;
+    this.info[id].endStName = stationName;
+    this.info[id].outTime = t;
+
+    const timeTaken = Math.abs(this.info[id].inTIme - t);
+    let arr = timeTaken;
+    let obj = this.info[id];
+    let inOutStName = `${obj.startStName}-${obj.endStName}`;
+
+    let prevData = this.timeMap[inOutStName];
+
+    if (Object.keys(this.timeMap).includes(`${inOutStName}`)) {
+        this.timeMap[inOutStName] += "," + arr.toString();
     } else {
-        trips[fromTo] = {
-            sum: diff,
-            length: 1,
-        };
+        this.timeMap[inOutStName] = arr.toString();
     }
-    delete trips[id];
 };
 
-/** 
- * @param {string} startStation 
+/**
+ * @param {string} startStation
  * @param {string} endStation
  * @return {number}
  */
-UndergroundSystem.prototype.getAverageTime = function(startStation, endStation) {
-    const fromTo = `${startStation}-${endStation}`;
-    return trips[fromTo].sum / trips[fromTo].length;
+UndergroundSystem.prototype.getAverageTime = function(
+    startStation,
+    endStation
+) {
+    let staName = `${startStation}-${endStation}`;
+
+    let splited = this.timeMap[staName].split(",");
+    // console.log(splited)
+    return splited.reduce((a, b) => parseInt(a) + parseInt(b)) / splited.length;
 };
 
 var obj = new UndergroundSystem();
-c(obj.checkIn(10, "Leyton", 3));
-c(obj.checkOut(10, "Paradise", 5));
+obj.checkIn(10, "Leyton", 3);
+obj.checkOut(10, "Paradise", 5);
 var param_3 = obj.getAverageTime("Leyton", "Paradise");
+
+// var obj = new UndergroundSystem();
+
+obj.checkIn(5, "Leyton", 10);
+
+obj.checkOut(5, "Paradise", 16);
+var param_3 = obj.getAverageTime("Leyton", "Paradise");
+
+c(param_3);
