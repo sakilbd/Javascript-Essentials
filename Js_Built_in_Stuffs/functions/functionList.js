@@ -183,3 +183,9 @@ for (let i = result.length - 1; i > 0; i--) {
 let a = [1, 2, 3, 4]
 
 a.map(String) // conversts array of int's to array of strings
+
+41.
+let [num1, ...num2] = [1, 2, 3, 4, 5, 6]
+
+console.log(num2) //returns [2,3,4,5,6]
+console.log(num1) //returns 1
