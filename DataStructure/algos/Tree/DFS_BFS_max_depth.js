@@ -22,6 +22,9 @@ var root = {
     },
 };
 
+
+// c(root.length)
+
 //Breath First Search Approach
 var maxDepth = function(root) {
     let levelCount = 0;
