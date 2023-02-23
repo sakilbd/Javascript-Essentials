@@ -5,7 +5,7 @@
           "type": "node",
           "request": "launch",
           "name": "Launch Current Opened File",
-          "program": "${file}"
+          "program": "${try4.js}"
       }
     ]
   }
