@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/difference-between-element-sum-and-digit-sum-of-an-array/description/
+
 const c = console.log.bind(console);
 var differenceOfSum = function(nums) {
     let itemAddition = nums.reduce((a, b) => a + b, 0);
