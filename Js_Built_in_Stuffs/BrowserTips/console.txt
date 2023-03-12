@@ -1,1 +1,5 @@
-monitor(functionName());  // this logs function actions on browser action on browsr console panel 
+1. monitor(functionName());  // this logs function actions on browser action on browsr console panel. 
+2. unmonitor(functionName()); //to unmonitor functions.
+3. addButton = document.getElementbyId('add-button')
+   monitorEvents(addButton) // to see events in browser console panel.
+   unmonitorEvents(addButton)  // to unmonitr Events.
