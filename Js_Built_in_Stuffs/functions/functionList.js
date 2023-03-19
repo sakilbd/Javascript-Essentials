@@ -55,9 +55,12 @@ console.log(ret); //prints: 123
 let replaceItem = item.replace(/l/, ""); // replaces first occurance of "l"
 // using variable 
 let i = "p";
-item = 'pqppep'
+let item = 'pqppep'
 var re = new RegExp(i, '');
 let replaceItem = item.replace(re, ""); //returns item = 'qppep'
+
+let replaceItem = item.replace("p", '') //reutnrs item = qppep
+let replaceAllItem = item.replaceAll("p", '') //reutnrs item = qe
 
 
 17. Math.trunc(4.23) //returns int part only which is 4 as like floor.
