@@ -192,3 +192,12 @@ let [num1, ...num2] = [1, 2, 3, 4, 5, 6]
 
 console.log(num2) //returns [2,3,4,5,6]
 console.log(num1) //returns 1
+42.
+regex using variable
+
+const str = "codingbeautyt";
+let num = 4;
+const regex = new RegExp(`.{1,${num}}`, "g");
+const result = str.match(regex);
+
+console.log(result); //returns [ 'codi', 'ngbe', 'auty', 't' ]
