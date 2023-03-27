@@ -30,6 +30,8 @@ c.String.fromCharCode(97); //returns "a" as 97 is the code of "a"
 const set1 = new Set(someArray);
 const set2 = new Set(someArray2);
 
+
+
 [...set1].filter(n => set2.has(n)) //returns common elements of two arrays.
 
 let set3 = new Set();
@@ -201,3 +203,7 @@ const regex = new RegExp(`.{1,${num}}`, "g");
 const result = str.match(regex);
 
 console.log(result); //returns [ 'codi', 'ngbe', 'auty', 't' ]
+43.
+let a = [1, 1, 2, , 2, 3, 3]
+
+let uniqueElements = [...new Set(a)] //returns [1,2,3]
