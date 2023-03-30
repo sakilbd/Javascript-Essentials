@@ -122,15 +122,18 @@ function groupBy(arr, property) {
         return result;
     }, {});
 }
-// const groupByCategory = groupBy(products, "category")
-// console.log(groupByCategory);
-
-
+const groupByCategory = groupBy(products, "category")
+console.log(groupByCategory);
+let finalData = {}
 for (let [key, value] of modifiedData) {
     // value.forEach((item) => {
     //     levels.push(item.level);
     // });
-    c(groupBy(value, "level"))
+
+    const mod = {
+        [key]: groupBy(value, "level"),
+    };
+    finalData = {...finalData, ...mod };
 }
 
-c([...new Set(levels)]);
+c(JSON.stringify(finalData))

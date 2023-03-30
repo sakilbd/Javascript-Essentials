@@ -207,3 +207,4 @@ console.log(result); //returns [ 'codi', 'ngbe', 'auty', 't' ]
 let a = [1, 1, 2, , 2, 3, 3]
 
 let uniqueElements = [...new Set(a)] //returns [1,2,3]
+44.
