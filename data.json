@@ -1,0 +1,49 @@
+{
+    "rooms": [{
+        "id": 24,
+        "name": Padma,
+    }, {
+        "id": 2,
+        "name": Meghna,
+    }],
+    "device": [{
+        "id": 1,
+        "device_code": 20230311656025,
+        "name": "sensometer",
+        "sensometer": [{
+                "id": 1,
+                "sensor": [{
+                        "id": 1,
+                        "sensor_id": 151,
+                        "name": "temp",
+                        "slave": [101, 102, 103]
+
+                    },
+                    {
+                        "id": 2,
+                        "sensor_id": 152,
+                        "name": "humidity",
+                        "slave": [101, 102, 103]
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "sensor": [{
+                        "id": 1,
+                        "sensor_id": 151,
+                        "name": "temp",
+                        "slave": [101, 102, 103]
+
+                    },
+                    {
+                        "id": 2,
+                        "sensor_id": 152,
+                        "name": "humidity",
+                        "slave": [101, 102, 103]
+                    }
+                ]
+            }
+        ]
+    }]
+}
