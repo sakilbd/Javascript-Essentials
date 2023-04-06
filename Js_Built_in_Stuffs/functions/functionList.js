@@ -207,3 +207,7 @@ console.log(result); //returns [ 'codi', 'ngbe', 'auty', 't' ]
 let a = [1, 1, 2, , 2, 3, 3]
 
 let uniqueElements = [...new Set(a)] //returns [1,2,3]
+
+44.
+let arr = [1, 2, 3, 4, 5, 6, 7]
+c(Math.max(...arr)) //returns 7,it will now work with out spread.
