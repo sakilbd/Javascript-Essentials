@@ -7,11 +7,20 @@
     return item * 2
 })
 
-7. Array.prototype.insert = function(index, item) {
+7.
+a.Array.prototype.insert = function(index, item) {
     this.splice(index, 0, item);
 };
 const arr = [1, 2, 3, 4];
 arr.insert(0, 69) //returns [69,1,2,3,4]
+
+b.
+let arr = [1, 2, 3]
+
+arr.splice(1, 0, ".") //returns [1,'.',2,3]
+arr.splice(1, 1, ".") //returns [1,'.',3]
+
+
 
 /*IIFT :Immediately Invoked Function Expression (Executes Imediately)*/
 
