@@ -3,7 +3,7 @@
 const c = console.log.bind(console);
 
 var isSumEqual = function(firstWord, secondWord, targetWord) {
-    let obj = {};
+
     let map = new Map();
     for (let i = 97; i <= 122; i++) {
         let alphabate = String.fromCharCode(i);
