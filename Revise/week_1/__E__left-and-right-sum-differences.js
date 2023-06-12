@@ -16,20 +16,11 @@ var leftRightDifference = function(nums) {
         if (i < length - 1) rightSum.push(sum + item);
         sum += item;
     });
+    rightSum = rightSum.reverse();
 
-    return rightSum;
+    return rightSum.map((rightSumItem, i) => {
+        return Math.abs(leftSum[i] - rightSumItem);
+    });
 };
 
 c(leftRightDifference([10, 4, 8, 3]));
-
-function rightSum(array) {
-    let rightSum = 0;
-    for (let i = array.length - 1; i >= 0; i--) {
-        rightSum += array[i];
-    }
-    return rightSum;
-}
-
-
-
-c(rightSum([10, 4, 8, 3]))
